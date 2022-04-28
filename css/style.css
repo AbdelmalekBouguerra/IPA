@@ -3401,8 +3401,8 @@ ul.list-style li:last-child {
   animation: spinner 3s infinite linear;
   border-radius: 50%;
   border: 3px solid #f1f6f8;
-  border-left-color: #10b3d6;
-  border-top-color: #10b3d6;
+  border-left-color: #f5ad00;
+  border-top-color: #f5ad00;
   margin: 0 auto 0em auto;
   position: absolute;
   left: -40px;
@@ -3416,7 +3416,7 @@ ul.list-style li:last-child {
   height: 20px;
   border: 6px solid #fff;
   box-shadow: 0 0 20px 0 rgba(4, 46, 56, 0.2);
-  background: #10b3d6;
+  background: #005a9a;
   position: absolute;
   right: 31px;
   top: 41px;
