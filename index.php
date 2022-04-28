@@ -44,7 +44,7 @@
       <div class="doc_banner_text_two text-center">
         <h2>Looking for help?</h2>
         <p>
-          KnowAll is a fully featured knowledge base theme for WordPress.
+          Abdelmalek assia 
         </p>
         <form action="#" class="banner_search_form">
           <input type="search" class="form-control" placeholder="Search the Knowledge Base" />
