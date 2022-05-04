@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/responsive.css" type="text/css" />
   <link rel="stylesheet" href="slideStyle.css">
+
   <title>KbDoc</title>
 </head>
 
@@ -25,6 +26,7 @@
   <?php include "partials/navbar.html" ?>
   <!--======================== end navbar ====================== -->
     <?php include "slideshow.html"?>
+  
   <section class="doc_categories_guide_area sec_pad" id="1">
     <img class="shap wow fadeInUp" src="img/home_one/dow_bg_two.png" alt="" />
     <div class="container">
