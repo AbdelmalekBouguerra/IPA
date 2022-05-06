@@ -8962,9 +8962,12 @@ blockquote .author {
 /*================ signup_area css ==============*/
 /*================ signin_left css ==============*/
 .signin_left {
-  background: #10b3d6;
+  background-image: url("../img/signup/log2.jpg");
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
 }
-.signin_left:before {
+/* .signin_left:before {
   content: "";
   left: 0;
   width: 100%;
@@ -8973,7 +8976,7 @@ blockquote .author {
   position: absolute;
   bottom: 0;
   z-index: 0;
-}
+} */
 .signin_left .round {
   bottom: 100px;
   width: 600px;
