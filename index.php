@@ -25,7 +25,7 @@
   <!--======================== navbar ======================== -->
   <?php include "partials/navbar.html" ?>
   <!--======================== end navbar ====================== -->
-    <?php include "slideshow.html"?>
+    <!-- <?php include "slideshow.html"?> -->
   
   <section class="doc_categories_guide_area sec_pad" id="1">
     <img class="shap wow fadeInUp" src="img/home_one/dow_bg_two.png" alt="" />

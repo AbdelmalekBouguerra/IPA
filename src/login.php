@@ -18,9 +18,10 @@
          /******************** Your code ***********************/
          $_SESSION['sess_user_id']   = $row['id'];
          $_SESSION['sess_user_name'] = $row['username'];
-         echo "Bonjour $username";
+         header('location:home.php');
          } else {
-            header('location:home.php');
+            $msg = "Invalid username and password!";
+            
          }
       } catch (PDOException $e) {
          echo "Error : ".$e->getMessage();
