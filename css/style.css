@@ -8784,9 +8784,9 @@ blockquote .author {
   z-index: -1;
 }
 .sign_left h2 {
-  color: #fff;
+  color:  #000;
   font-size: 36px;
-  line-height: 44px;
+  line-height: 44px; 
 }
 
 .signup_left {
@@ -8962,7 +8962,7 @@ blockquote .author {
 /*================ signup_area css ==============*/
 /*================ signin_left css ==============*/
 .signin_left {
-  background-image: url("../img/signup/C:log2.jpg");
+  background-image: url("../img/signup/a.jpg");
   background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
