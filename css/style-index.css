@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+
 .pagination {
   position: absolute !important;
   width: 100%;
@@ -642,6 +644,7 @@ strong {
 }
 
 .o-h, h1, .o-h1, h2, .o-h2, h3, .o-h3, h4, .o-h4, h5, .o-h5, h6, .o-h6 {
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   margin-top: 0;
   line-height: 1.1;
@@ -689,6 +692,7 @@ h6, .o-h6 {
 }
 
 .o-hsub {
+  font-family: 'Poppins', sans-serif;
   font-size: 0.75rem;
   padding: 1.25rem 0;
   display: inline-block;
