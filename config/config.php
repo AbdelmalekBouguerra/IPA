@@ -1,7 +1,15 @@
 <?php
-   define('DB_SERVER', '127.0.0.1:3036');
-   define('DB_USERNAME', 'root');
-   define('DB_PASSWORD', '');
-   define('DB_DATABASE', 'ipa');
-   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+$host     = "localhost";//Ip of database, in this case my host machine    
+$user     = "root";	//Username to use
+$pass     = "";//Password for that user
+$dbname   = "ipa";//Name of the database
+try {
+    $connection = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+}catch(PDOException $e)
+{
+  echo $e->getMessage();                         
+}
+
 ?>

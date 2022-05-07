@@ -1,30 +1,33 @@
 <?php
-   include "config/config.php";
-
    session_start();
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-      $sql = "SELECT id FROM users WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         
-         header("location: index.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
+   include "config/config.php";
+   $msg = ""; 
+   if(isset($_POST['Login'])) {
+   $username = trim($_POST['username']);
+   $password = trim($_POST['password']);
+   if($username != "" && $password != "") {
+      try {
+         $query = "select * from `users` where `username`=:username and `password`=:password";
+         $stmt = $connection->prepare($query);
+         $stmt->bindParam('username', $username, PDO::PARAM_STR);
+         $stmt->bindValue('password', $password, PDO::PARAM_STR);
+         $stmt->execute();
+         $count = $stmt->rowCount();
+         $row   = $stmt->fetch(PDO::FETCH_ASSOC);
+         if($count == 1 && !empty($row)) {
+         /******************** Your code ***********************/
+         $_SESSION['sess_user_id']   = $row['id'];
+         $_SESSION['sess_user_name'] = $row['username'];
+         header('location:home.php');
+         } else {
+            $msg = "Invalid username and password!";
+            
+         }
+      } catch (PDOException $e) {
+         echo "Error : ".$e->getMessage();
       }
+   } else {
+      $msg = "Both fields are required!";
    }
+}
 ?>
