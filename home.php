@@ -25,19 +25,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 </head>
 
 <body data-scroll-animation="true">
-    <div id="preloader">
-        <div id="ctn-preloader" class="ctn-preloader">
-            <div class="round_spinner">
-                <div class="spinner"></div>
-                <div class="text">
-                    <img src="img/spinner_logo.png" alt="">
-                    <h4><span>KbDoc</span></h4>
-                </div>
-            </div>
-            <h2 class="head">Did You Know?</h2>
-            <p></p>
-        </div>
-    </div>
+<?php include "partials/preloader.html" ?>
 
     <div class="click_capture"></div>
 
@@ -350,6 +338,8 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
         </nav>
 
         <section class="breadcrumb_area">
+                        <h2 class="container">Bonjour 3iniya username : <?php echo $_SESSION['sess_user_name']?> hdi hya la page win ybano les tickets</h2>
+
             <img class="p_absolute bl_left" src="img/v.svg" alt="">
             <img class="p_absolute bl_right" src="img/home_one/b_leaf.svg" alt="">
             <img class="p_absolute star" src="img/home_one/banner_bg.png" alt="">
@@ -357,22 +347,6 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
             <img class="p_absolute wave_shap_two" src="img/blog-classic/shap_02.png" alt="">
             <img class="p_absolute one wow fadeInRight" src="img/home_one/b_man_two.png" alt="">
             <img class="p_absolute two wow fadeInUp" data-wow-delay="0.2s" src="img/home_one/flower.png" alt="">
-            <div class="container custom_container">
-                <form action="#" class="banner_search_form banner_search_form_two">
-                    <div class="input-group">
-                        <input type="search" class="form-control" placeholder='Search ("/" to focus)'>
-                        <div class="input-group-append">
-                            <select class="custom-select" id="inlineFormCustomSelect">
-                                <option selected>All Category</option>
-                                <option value="1">Doc Archive</option>
-                                <option value="2">Doc List</option>
-                                <option value="3">KbDoc</option>
-                            </select>
-                        </div>
-                        <button type="submit"><i class="icon_search"></i></button>
-                    </div>
-                </form>
-            </div>
         </section>
 
         <section class="page_breadcrumb">
