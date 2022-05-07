@@ -31,7 +31,7 @@
                         <div class="text-center">
                             <h3>Connectez-vous à la plateforme Help desk IPA</h3>
                         </div>
-                        <form action="" methode = "POST" class="row login_form">
+                        <form action="" method="post" class="row login_form">
                             <div class="col-lg-12 form-group">
                                 <div class="small_text">Votre Nom d'utilsateur</div>
                                 <input name="username" type="text" class="form-control" id="email" placeholder="username">
@@ -42,9 +42,9 @@
                                     <input name="password" id="confirm-password" name="confirm-password" type="password" class="form-control" placeholder="mot de pass" autocomplete="off">
                                 </div>
                             </div>
-
+                            <p class="text-danger"><?php echo $msg; ?></p>
                             <div class="col-lg-12 text-center">
-                                <button type="submit" class="btn action_btn thm_btn">CONNEXION</button>
+                                <button name="Login" type="submit" class="btn action_btn thm_btn">CONNEXION</button>
                             </div>
                         </form>
                     </div>
