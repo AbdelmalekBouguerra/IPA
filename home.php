@@ -337,7 +337,7 @@ include 'src/ticket.php';
         </footer>
     </div>
     <!-- including model of tickets -->
-    <?php include 'partials/model-ticket.html'; ?>
+    <?php include 'partials/model_ticket.html'; ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
