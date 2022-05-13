@@ -1,10 +1,11 @@
-<?php 
+<?php
 // session test if user connected
 session_start();
-if(!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")){
-  header('location:signin.php');}
-  include 'src/ticket.php';
-    ?>
+if (!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")) {
+    header('location:signin.php');
+}
+include 'src/ticket.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,12 +32,12 @@ if(!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")){
     <div class="click_capture"></div>
 
     <div class="body_wrapper">
-        <?php include "partials/navbar.html"?>
+        <?php include "partials/navbar.html" ?>
 
         <section class="breadcrumb_area">
             <h2 class="container" style="font-size: 50px;padding-left: 30px;margin-left: 400px;">
                 Bonjours:
-                <?php echo $_SESSION['sess_user_name']?> Lorem ipsum dolor sit amet.
+                <?php echo $_SESSION['sess_user_name'] ?> Lorem ipsum dolor sit amet.
             </h2>
 
             <img class="p_absolute bl_left" src="img/v.svg" alt="" />
@@ -79,7 +80,8 @@ if(!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")){
                             <!-- /.action-content -->
 
                             <div class="action-button-container">
-                                <a href="#" class="action_btn btn-ans">STAR</a>
+                                <a href="#" data-toggle="modal" data-target="#chose-type-ticket"
+                                    class="action_btn btn-ans">STAR</a>
                             </div>
                             <!-- /.action-button-container -->
                         </div>
@@ -105,7 +107,7 @@ if(!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")){
 
                             <?php
                             // hya ntstiw doka  
-                            foreach ($tickets as $ticket) {?>
+                            foreach ($tickets as $ticket) { ?>
                             <div class="community-post style-two kbDoc richard bug">
                                 <div class="post-content">
                                     <div class="author-avatar">
@@ -113,12 +115,13 @@ if(!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")){
                                     </div>
                                     <div class="entry-content">
                                         <h3 class="post-title">
-                                            <a href="forum-single.html"><?php echo "Bon commande ".$ticket["id"];?></a>
+                                            <a
+                                                href="forum-single.html"><?php echo "Bon commande " . $ticket["id"]; ?></a>
                                         </h3>
                                         <ul class="meta">
                                             <li>
                                                 <img src="img/home_support/cmm1.png" alt="cmm" /><a
-                                                    href="#"><?php echo "Type de ticket est ".$ticket["typeTicket"];?>
+                                                    href="#"><?php echo "Type de ticket est " . $ticket["typeTicket"]; ?>
                                                 </a>
                                             </li>
                                             <li><i class="icon_calendar"></i>updated 3 days ago</li>
@@ -136,7 +139,7 @@ if(!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")){
                                     </ul>
                                 </div>
                             </div>
-                            <?php }?>
+                            <?php } ?>
                             <!-- /.community-post -->
                         </div>
                         <!-- /.community-posts-wrapper -->
@@ -333,6 +336,8 @@ if(!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")){
             </div>
         </footer>
     </div>
+    <!-- including model of tickets -->
+    <?php include 'partials/model-ticket.html'; ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
