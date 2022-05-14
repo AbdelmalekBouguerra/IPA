@@ -261,7 +261,7 @@ include 'src/ticket.php';
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">
                             <div class="f_widget subscribe_widget wow fadeInUp">
-                                <a href="index.html" class="f_logo"><img src="img/logo-ipa.png" alt="" /></a>
+                                <a href="index.html" class="f_logo"><img src="img/logo-ipa.png" alt style =" width:99 px ;width: 100px;" /></a>
                                 <h4 class="c_head">Contacter nous </h4>
                                 <form action="#" class="footer_subscribe_form">
                                     <input type="email" placeholder="Email" class="form-control" />
