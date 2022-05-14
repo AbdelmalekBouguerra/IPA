@@ -171,24 +171,24 @@ include 'src/ticket.php';
                             <div class="widget status_widget">
                                 <h4 class="c_head">Information</h4>
                                 <div class="open-hours">
-                                    <h4 class="title-sm">Our office hours</h4>
-                                    <p>Monday - Friday / 10am - 6pm (UTC +4) NewYork</p>
+                                    <h4 class="title-sm">Cellule système Informatique</h4>
+                                    <p> Monsieur FEDDI Fouad / + 213 (0) 23 36 75 38 Alger</p>
                                 </div>
                                 <!-- /.open-hours -->
                             </div>
 
                             <div class="widget usefull_links_widget">
-                                <h4 class="c_head">Usefull Links</h4>
+                                <h4 class="c_head">utiles</h4>
                                 <ul class="list-unstyled usefull-links">
                                     <li>
-                                        <i class="icon_lightbulb_alt"></i><a href="#">FAQs</a>
+                                        <i class="icon_lightbulb_alt"></i><a href="#"> IPA </a>
                                     </li>
                                     <li>
-                                        <i class="icon_clock_alt"></i><a href="#">Popular</a>
+                                        <i class="icon_clock_alt"></i><a href="#">votre temps </a>
                                     </li>
                                     <li><i class="icon_piechart"></i><a href="#">Recent</a></li>
                                     <li>
-                                        <i class="icon_info_alt"></i><a href="#">Unanswered</a>
+                                        <i class="icon_info_alt"></i><a href="#">Sans réponse</a>
                                     </li>
                                 </ul>
                             </div>
@@ -240,9 +240,9 @@ include 'src/ticket.php';
                 <div class="action-content-wrapper">
                     <div class="action-title-wrap title-img">
                         <img src="img/home_support/chat-smile.png" alt="" />
-                        <h2 class="action-title">New to Communities?</h2>
+                        <h2 class="action-title">Contacter IPA disck</h2>
                     </div>
-                    <a href="#" class="action_btn">Join the community <i class="arrow_right"></i></a>
+                    <a href="#" class="action_btn"> <i class="arrow_right"></i></a>
                 </div>
                 <!-- /.action-content-wrapper -->
             </div>
@@ -261,11 +261,11 @@ include 'src/ticket.php';
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">
                             <div class="f_widget subscribe_widget wow fadeInUp">
-                                <a href="index.html" class="f_logo"><img src="img/logo.png" alt="" /></a>
-                                <h4 class="c_head">Subscribe to our newsletter</h4>
+                                <a href="index.html" class="f_logo"><img src="img/logo-ipa.png" alt="" /></a>
+                                <h4 class="c_head">Contacter nous </h4>
                                 <form action="#" class="footer_subscribe_form">
                                     <input type="email" placeholder="Email" class="form-control" />
-                                    <button type="submit" class="s_btn">Send</button>
+                                    <button type="submit" class="s_btn">envyer</button>
                                 </form>
                                 <ul class="list-unstyled f_social_icon">
                                     <li>
@@ -285,43 +285,49 @@ include 'src/ticket.php';
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="f_widget link_widget pl_30 wow fadeInUp" data-wow-delay="0.2s">
-                                <h3 class="f_title">Company</h3>
+                                <h3 class="f_title">home</h3>
                                 <ul class="list-unstyled link_list">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Affiliates</a></li>
-                                    <li><a href="#">Partners</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">KbDoc for Good</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#"> A propos de l'utilisation </a></li>
+                                    <li><a href="#">Exemples</a></li>
+                                    <li><a href="#">Ticket</a></li>
+                                    <li><a href="#">SOlution </a></li>
+                                    <li><a href="#">Bon de commande </a></li>
+                                    <li><a href="#">Heure de traveile </a></li>
+                                    <li><a href="#">Contacter nous </a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-2 col-sm-6">
                             <div class="f_widget link_widget wow fadeInUp" data-wow-delay="0.4s">
-                                <h3 class="f_title">Support</h3>
+                                <h3 class="f_title">help </h3>
                                 <ul class="list-unstyled link_list">
                                     <li><a href="index-3.html">Help Desk</a></li>
-                                    <li><a href="#">Knowledge Base</a></li>
-                                    <li><a href="#">Live Chat</a></li>
-                                    <li><a href="#">Integrations</a></li>
-                                    <li><a href="#">Reports</a></li>
-                                    <li><a href="#">iOS & Android</a></li>
+                                    <li><a href="#">Ilustration </a></li>
+                                    <li><a href="#">Essaye</a></li>
+                                    <li><a href="#">fonctionaliter</a></li>
+                                    <li><a href="#">tutoriel</a></li>
+                    
                                     <li><a href="#">Messages</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="f_widget link_widget pl_70 wow fadeInUp" data-wow-delay="0.6s">
-                                <h3 class="f_title">Doc Pages</h3>
+                                <h3 class="f_title">Institu pasteur algerer</h3>
                                 <ul class="list-unstyled link_list">
-                                    <li><a href="doclist.html">Doc Topic</a></li>
-                                    <li><a href="#">Free Training</a></li>
-                                    <li><a href="doc-archive.html">Doc Archive</a></li>
-                                    <li><a href="changelog.html">Changelog</a></li>
-                                    <li><a href="Onepage.html">Onepage Docs</a></li>
-                                    <li><a href="#">Conversion Tracking</a></li>
-                                    <li><a href="cheatsheet.html">Cheatseet</a></li>
+                                    <li><a href="doclist.html">adress: : Route de petit Staouéli، Dély Ibrahim</a></li>
+                                    <li><a href="#">tele:023 36 75 04</a></li>
+                                    <li><a href="doc-archive.html">fax: 213 (0) 23 36 75 04 </a></li>
+                                    <li><a href="changelog.html">Horaires :
+                        samedi	08:00–16:00</a>
+                      <li> <a> dimanche	08:00–16:00 </a> </li>
+                     <li><a>  lundi	08:00–16:00  </a></li>
+                       <li><a>  mardi	08:00–16:00 </a></li>    
+                       <li> <a> mercredi	08:00–16:00 </a> </li>
+                       <li><a> jeudi	08:00–16:00</a> </li>
+                        vendredi	Fermé   </a></li>
+                                    <li><a href="Onepage.html">E-mail: : contact@pasteur.dz </a></li>
+                
                                 </ul>
                             </div>
                         </div>
@@ -331,7 +337,7 @@ include 'src/ticket.php';
             </div>
             <div class="footer_bottom text-center">
                 <div class="container">
-                    <p>© 2020 All Rights Reserved by <a href="index.html">KbDoc</a></p>
+                    <p>© 2022 All Rights Reserved by <a href="index.html">IPA diskfreespace</a></p>
                 </div>
             </div>
         </footer>
