@@ -80,7 +80,7 @@ include 'src/ticket.php';
                             <!-- /.action-content -->
 
                             <div class="action-button-container">
-                                <a href="#" data-toggle="modal" data-target="#chose-type-ticket"
+                                <a href="C:\wamp64\www\IPA\model-ticket.html" 
                                     class="action_btn btn-ans">STAR</a>
                             </div>
                             <!-- /.action-button-container -->
@@ -336,7 +336,7 @@ include 'src/ticket.php';
             </div>
         </footer>
     </div>
-    <!-- including model of tickets -->
+    <!-- including model of tickets -->w
     <?php include 'partials/model-ticket.html'; ?>
     <?php include 'partials/ticket-bc.html'; ?>
 
