@@ -25,6 +25,4 @@
          } catch (PDOException $e) {
             echo "Error : ".$e->getMessage();
          }
-}else{
-   echo 'type vide';
 }
