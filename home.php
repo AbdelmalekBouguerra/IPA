@@ -80,7 +80,7 @@ include 'src/ticket.php';
                             <!-- /.action-content -->
 
                             <div class="action-button-container">
-                                <a href="C:\wamp64\www\IPA\model-ticket.html" 
+                                <a data-toggle="modal" data-target="#exampleModalCenter"
                                     class="action_btn btn-ans">STAR</a>
                             </div>
                             <!-- /.action-button-container -->

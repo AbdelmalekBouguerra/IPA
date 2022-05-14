@@ -1,7 +1,7 @@
 <?php
 $host     = "localhost";//Ip of database, in this case my host machine    
 $user     = "root";	//Username to use
-$pass     = "10320";//Password for that user
+$pass     = "";//Password for that user
 $dbname   = "ipa";//Name of the database
 try {
     $connection = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
