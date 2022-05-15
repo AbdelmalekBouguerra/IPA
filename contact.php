@@ -34,10 +34,8 @@ if (!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")) {
             <img class="p_absolute bl_left" src="img/v.svg" alt="">
             <img class="p_absolute bl_right" src="img/home_one/b_leaf.svg" alt="">
             <img class="p_absolute one wow fadeInRight" src="img/home_one/b_man_two.png" alt="">
-            <div class="container">
-                <div class="breadcrumb_content_two text-center">
-                    <h2>Contact</h2>
-                </div>
+            <div class="breadcrumb_content_two text-center">
+                <h2>Contact Page</h2>
             </div>
         </section>
         <section class="contact_area sec_pad">
