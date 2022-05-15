@@ -622,6 +622,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/pre-loader.js"> </script>
     <script src="assets/bootstrap/js/popper.min.js"></script>
