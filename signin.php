@@ -23,8 +23,8 @@
         <section class="signup_area">
             <div class="row ml-0 mr-0">
                 <div class="sign_left signin_left">
-                    <h2>Accéder à votre compte pour mettre des tickets et bien d'autres fonctionnalités.</h2>
-                    <img class="position-absolute top" src="img/signup/top_ornamate.png" alt="top">
+        
+                  
                     <img class="position-absolute bottom" src="img/signup/bottom_ornamate.png" alt="bottom">                </div>
                 <div class="sign_right signup_right">
                     <div class="sign_inner signup_inner">
