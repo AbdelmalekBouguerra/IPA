@@ -28,7 +28,7 @@ if (!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")) {
 <body data-scroll-animation="true">
     <?php include "partials/preloader.html" ?>
     <div class="body_wrapper">
-        <?php include "partials/navbar.html" ?>
+        <?php include "partials/navbar2.html" ?>
 
         <div class="breadcrumb_area_three">
             <img class="p_absolute one" src="img/typography/leaf_left.png" alt="">
