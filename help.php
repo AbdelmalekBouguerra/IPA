@@ -55,13 +55,13 @@
                     <div class="col-lg-10 col-md-8">
                         <div class="shortcode_info" id="post">
                             <div class="shortcode_title">
-                                <h1>Shortcodes</h1>
+                                <h1>IPA HELP</h1>
                                 <p><span>Welcome to IPA !</span> Trouver les reponses de votre qestions et garanti une vu claire surzz</p>
                             </div>
                             <div class="toggle_shortcode">
                                 <div class="shortcode_title">
                                     <h4 class="s_title load-order-2" id="toggle">ETAPS</h4>
-                                    <p>suivier les tache pour bien faciliter votre utilisation   </p>
+                                    <p>suivier les taches pour  faciliter votre utilisation   </p>
                                 </div>
                                 <a class="toggle_btn" data-toggle="collapse" href="#multiCollapseExample1" role="button"
                                     aria-expanded="false" aria-controls="multiCollapseExample1">  Comment puis-je vous contacter  ?  </a>
