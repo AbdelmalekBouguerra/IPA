@@ -121,8 +121,6 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content rounded-0">
             <div class="modal-body py-0">
-
-
                 <div class="d-flex main-content">
                     <div class="bg-image promo-img mr-3" style="background-image: url('./img/bcd1.jpg');">
                     </div>
@@ -157,7 +155,6 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
