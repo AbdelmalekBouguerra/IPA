@@ -34,7 +34,8 @@
             <img class="p_absolute one wow fadeInRight" src="img/home_one/b_man_two.png" alt="">
             <img class="p_absolute two wow fadeInUp" data-wow-delay="0.2s" src="img/home_one/flower.png" alt="">
             <div class="breadcrumb_content_two text-center">
-                <h2>Help Page</h2>
+                <h2> Bonjour，
+                            Comment puis-je vous aider ?</h2>
             </div>
         </section>
         <section class="page_breadcrumb">
@@ -83,9 +84,8 @@
 
                             <div class="accordion_shortcode">
                                 <div class="shortcode_title">
-                                    <h4 class="s_title load-order-2" id="accordions">Accordion</h4>
-                                    <p>The accordion is a graphical control element comprising a vertically stacked list
-                                        of items, such as labels or thumbnails.</p>
+                                    <h4 class="s_title load-order-2" id="accordions">Sujet </h4>
+                                    <p> </p>
                                 </div>
                                 <div id="accordion">
                                     <div class="card doc_accordion">
@@ -94,7 +94,7 @@
                                                 <button class="btn btn-link" data-toggle="collapse"
                                                     data-target="#collapseOne" aria-expanded="true"
                                                     aria-controls="collapseOne">
-                                                    Meaning of Accordion<i class="icon_plus"></i><i
+                                                    cration ticket<i class="icon_plus"></i><i
                                                         class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
@@ -102,9 +102,8 @@
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                                An accordion is similar in purpose to a tabbed interface, a list of
-                                                items where exactly one item is expanded into a panel (i.e. list items
-                                                are shortcuts to access separate panels).
+                                               Dans la page HOME vous trouver un button STAR vous pouver lancer facilement votre ticket par un simple
+                                               click 
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +113,7 @@
                                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseTwo" aria-expanded="false"
                                                     aria-controls="collapseTwo">
-                                                    Online Marketing<i class="icon_plus"></i><i
+                                                    Bon de commande <i class="icon_plus"></i><i
                                                         class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
@@ -122,9 +121,8 @@
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                                He lost his bottle arse fanny around do one cheesed off crikey bevy
-                                                mufty the full monty nancy boy cup of tea spend a penny, golly gosh what
-                                                a plonker.
+                                                Apres avoire clicker sur STAR , votre premier etape a bien fait , maintenant vous pouver completer le formulaire 
+                                                par selectioner le type d`abord ensuit votre description votre nom et automatiquement inserert 
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +132,7 @@
                                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseThree" aria-expanded="false"
                                                     aria-controls="collapseThree">
-                                                    Amazing Support <i class="icon_plus"></i><i
+                                                    discreption de bon de commande  <i class="icon_plus"></i><i
                                                         class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
@@ -142,9 +140,9 @@
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                                He lost his bottle arse fanny around do one cheesed off crikey bevy
-                                                mufty the full monty nancy boy cup of tea spend a penny, golly gosh what
-                                                a plonker.
+                                               Quand vous lancer un ticket, ya un chan de descreption qui resume votre problem vous pouver ecrire petite
+                                               paragraphe qui decrit votre bon de commande  
+                                
                                             </div>
                                         </div>
                                     </div>
