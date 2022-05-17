@@ -139,8 +139,8 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select id="ifYes" class="form-control chzn-select " multiple="true" name="faculty"
-                                    style="width: auto !important;">
+                                <label for="materiel">Matériel</label>
+                                <select id="materiel" class="form-control chzn-select " multiple="true" name="faculty">
                                     <option value="RP">pc</option>
                                     <option value="AM">imprimant</option>
                                     <option value="RM">scaner</option>
