@@ -24,6 +24,8 @@ include 'src/ticket.php';
     <link rel="stylesheet" href="assets/animation/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <!-- chosen -->
+    <link rel="stylesheet" href="./vendor/chosen_v1.8.7/chosen.min.css">
     <title> Accueil - Institut Pasteur d'Algérie</title>
 </head>
 
@@ -266,7 +268,16 @@ include 'src/ticket.php';
     <script src="js/TweenMax.min.js"></script>
     <script src="js/jquery.wavify.js"></script>
     <script src="assets/wow/wow.min.js"></script>
+    <script src="./vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+    <script src="./vendor/chosen_v1.8.7/chosen.proto.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+    $(function() {
+        $(".chzn-select").chosen({
+            width: "100%"
+        });
+    });
+    </script>
 </body>
 
 </html>
