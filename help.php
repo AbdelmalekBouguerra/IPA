@@ -56,24 +56,21 @@
                         <div class="shortcode_info" id="post">
                             <div class="shortcode_title">
                                 <h1>Shortcodes</h1>
-                                <p><span>Welcome to KbDoc !</span> Get familiar with the Stripe products and explore
-                                    their features:</p>
+                                <p><span>Welcome to IPA !</span> Trouver les reponses de votre qestions et garanti une vu claire surzz</p>
                             </div>
                             <div class="toggle_shortcode">
                                 <div class="shortcode_title">
-                                    <h4 class="s_title load-order-2" id="toggle">Toggle</h4>
-                                    <p>Switch from one effect, feature, or state to another by using a toggle.</p>
+                                    <h4 class="s_title load-order-2" id="toggle">ETAPS</h4>
+                                    <p>suivier les tache pour bien faciliter votre utilisation   </p>
                                 </div>
                                 <a class="toggle_btn" data-toggle="collapse" href="#multiCollapseExample1" role="button"
-                                    aria-expanded="false" aria-controls="multiCollapseExample1">Super Professional</a>
+                                    aria-expanded="false" aria-controls="multiCollapseExample1">  Comment puis-je vous contacter  ?  </a>
                                 <div class="collapse multi-collapse show" id="multiCollapseExample1">
-                                    <div class="card card-body toggle_body"> A short rod of wood or plastic sewn to one
-                                        side of a coat or other garment, pushed through a hole or loop on the other side
-                                        and twisted so as to act as a fastener. </div>
+                                    <div class="card card-body toggle_body">  </div>
                                 </div>
                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse"
                                     href="#multiCollapseExample2" role="button" aria-expanded="false"
-                                    aria-controls="multiCollapseExample2">Dashboard</a>
+                                    aria-controls="multiCollapseExample2">Comment puis je cree mon ticket?</a>
                                 <div class="collapse multi-collapse" id="multiCollapseExample2">
                                     <div class="card card-body toggle_body">
                                         <iframe src="https://scribehow.com/embed/KbDoc__iC5E3sOPQgStUd-9gfbF9A"
@@ -95,16 +92,20 @@
                                                 <button class="btn btn-link" data-toggle="collapse"
                                                     data-target="#collapseOne" aria-expanded="true"
                                                     aria-controls="collapseOne">
-                                                    cration ticket<i class="icon_plus"></i><i class="icon_minus-06"></i>
+                                                    Je ne peux pas me connecter à mon compte. Que faire?<i class="icon_plus"></i><i class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
                                         </div>
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                                Dans la page HOME vous trouver un button STAR vous pouver lancer
-                                                facilement votre ticket par un simple
-                                                click
+                                            our vous connecter à votre compte, assurez-vous de saisir la bonne adresse e-mail (ou l'ID de membre) et le mot de passe correspondant. Votre mot de passe est sensible à la casse, vérifiez donc que la touche Verr Maj est activée sur votre clavier et que le mot de passe ne comporte aucune espace en trop. Parmi les autres solutions figurent :
+
+1. Supprimez les cookies ou changez de navigateur
+2. Essayez le processus de récupération de mot de passe
+3. Si vous recevez un message d'erreur indiquant « Désolé, vous n'être pas autorisé à vous connecter à ce compte », contactez notre équipe du service client
+
+Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté des informations importantes concernant votre compte.
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +115,8 @@
                                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseTwo" aria-expanded="false"
                                                     aria-controls="collapseTwo">
-                                                    Bon de commande <i class="icon_plus"></i><i
+                                                    
+                                                    Je n'ai pas reçu ma commande . Que puis-je faire ?<i class="icon_plus"></i><i
                                                         class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
@@ -122,10 +124,7 @@
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                                Apres avoire clicker sur STAR , votre premier etape a bien fait ,
-                                                maintenant vous pouver completer le formulaire
-                                                par selectioner le type d`abord ensuit votre description votre nom et
-                                                automatiquement inserert
+                                            Contactez IPA disk  pour plus d'informations ou ouvree le ticket pour obtenir le code. Assurez-vous d'ouvrir le ticket avant la fin de la période.
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +134,7 @@
                                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseThree" aria-expanded="false"
                                                     aria-controls="collapseThree">
-                                                    discreption de bon de commande <i class="icon_plus"></i><i
+                                                    Je n'ai pas reçu la validation de mon ticket sur mon compte. Que puis-je faire? <i class="icon_plus"></i><i
                                                         class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
@@ -143,9 +142,7 @@
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                                Quand vous lancer un ticket, ya un chan de descreption qui resume votre
-                                                problem vous pouver ecrire petite
-                                                paragraphe qui decrit votre bon de commande
+                                            
 
                                             </div>
                                         </div>
