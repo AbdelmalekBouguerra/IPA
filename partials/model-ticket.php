@@ -115,41 +115,6 @@
     font-weight: 900 !important;
 }
 </style>
-<!-- Modal
-<div
-  class="modal fade"
-  id="chose-type-ticket"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Choisi</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <button>BC</button>
-        <button>BA</button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
@@ -162,46 +127,32 @@
                     <div class="bg-image promo-img mr-3" style="background-image: url('./img/bcd1.jpg');">
                     </div>
                     <div class="content-text p-4">
-                        <h3>Sign up to access all the resourcess</h3>
-                        <p>All their equipment and instruments are alive. The sky was cloudless and of a deep dark blue.
-                        </p>
-
+                        <h3>Remplire tout les champs pour envoyer le ticket (bon de commande)</h3>
                         <form action="" method="post" name="send-ticket">
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="text" name="desc" class="form-control" id="email">
-                            </div>
                             <div class="form-group">
                                 <label for="exampleSelect">Type de commande</label>
                                 <select name="type-ticket" onchange="yesnoCheck(this);" class="form-control"
                                     id="exampleSelect">
-                                    <option value="AM">Achat matériel</option>
+                                    <option value="AM" selected>Achat matériel</option>
                                     <option value="RP">Remplacement de piece</option>
                                     <option value="RM">Reparation de matériel</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleSelect">Choisi votre matériel</label>
-                                <select id="ifYes" class="form-control" id="exampleSelect" disabled>
+                                <select id="ifYes" class="form-control chzn-select " multiple="true" name="faculty"
+                                    style="width: auto !important;">
                                     <option value="RP">pc</option>
                                     <option value="AM">imprimant</option>
                                     <option value="RM">scaner</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="name">First Name</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Password</label>
-                                <input type="password" class="form-control" id="name">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" required
+                                    style="resize: none;"> Entre votre description ici</textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block">
-                            </div>
-                            <div class="form-group ">
-                                <p class="custom-note"><small>By signing up you will agree to our <a href="#">Privacy
-                                            Policy</a></small></p>
                             </div>
                         </form>
                     </div>
