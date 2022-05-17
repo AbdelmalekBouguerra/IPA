@@ -202,7 +202,7 @@ Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté des 
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-sm-6">
-                        <p>© 2020 All Rights Reserved by <a href="index.html">KbDoc</a></p>
+                        <p>© 2022 All Rights Reserved by <a href="index.html">Assia Boutakhedmit</a></p>
                     </div>
                     <div class="col-sm-6 text-right">
                         <ul class="list-unstyled f_social_icon">
