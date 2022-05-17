@@ -35,7 +35,7 @@
             <img class="p_absolute two wow fadeInUp" data-wow-delay="0.2s" src="img/home_one/flower.png" alt="">
             <div class="breadcrumb_content_two text-center">
                 <h2> Bonjour，
-                            Comment puis-je vous aider ?</h2>
+                    Comment puis-je vous aider ?</h2>
             </div>
         </section>
         <section class="page_breadcrumb">
@@ -76,15 +76,16 @@
                                     aria-controls="multiCollapseExample2">Dashboard</a>
                                 <div class="collapse multi-collapse" id="multiCollapseExample2">
                                     <div class="card card-body toggle_body">
-                                        He lost his bottle arse fanny around do one cheesed off crikey bevy mufty the
-                                        full monty nancy boy cup of tea spend a penny, golly gosh what a plonker.
+                                        <iframe src="https://scribehow.com/embed/KbDoc__iC5E3sOPQgStUd-9gfbF9A"
+                                            width="640" height="640" allowfullscreen frameborder="0" style="margin-left:
+                                            200px;"></iframe>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="accordion_shortcode">
                                 <div class="shortcode_title">
-                                    <h4 class="s_title load-order-2" id="accordions">Sujet </h4>
+                                    <h4 class="s_title load-order-2" id="accordions">Sujet</h4>
                                     <p> </p>
                                 </div>
                                 <div id="accordion">
@@ -94,16 +95,16 @@
                                                 <button class="btn btn-link" data-toggle="collapse"
                                                     data-target="#collapseOne" aria-expanded="true"
                                                     aria-controls="collapseOne">
-                                                    cration ticket<i class="icon_plus"></i><i
-                                                        class="icon_minus-06"></i>
+                                                    cration ticket<i class="icon_plus"></i><i class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
                                         </div>
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                               Dans la page HOME vous trouver un button STAR vous pouver lancer facilement votre ticket par un simple
-                                               click 
+                                                Dans la page HOME vous trouver un button STAR vous pouver lancer
+                                                facilement votre ticket par un simple
+                                                click
                                             </div>
                                         </div>
                                     </div>
@@ -121,8 +122,10 @@
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                                Apres avoire clicker sur STAR , votre premier etape a bien fait , maintenant vous pouver completer le formulaire 
-                                                par selectioner le type d`abord ensuit votre description votre nom et automatiquement inserert 
+                                                Apres avoire clicker sur STAR , votre premier etape a bien fait ,
+                                                maintenant vous pouver completer le formulaire
+                                                par selectioner le type d`abord ensuit votre description votre nom et
+                                                automatiquement inserert
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +135,7 @@
                                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseThree" aria-expanded="false"
                                                     aria-controls="collapseThree">
-                                                    discreption de bon de commande  <i class="icon_plus"></i><i
+                                                    discreption de bon de commande <i class="icon_plus"></i><i
                                                         class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
@@ -140,9 +143,10 @@
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                               Quand vous lancer un ticket, ya un chan de descreption qui resume votre problem vous pouver ecrire petite
-                                               paragraphe qui decrit votre bon de commande  
-                                
+                                                Quand vous lancer un ticket, ya un chan de descreption qui resume votre
+                                                problem vous pouver ecrire petite
+                                                paragraphe qui decrit votre bon de commande
+
                                             </div>
                                         </div>
                                     </div>
