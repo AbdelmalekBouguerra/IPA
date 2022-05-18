@@ -122,7 +122,7 @@
         <div class="modal-content rounded-0">
             <div class="modal-body py-0">
                 <div class="d-flex main-content">
-                    <div class="bg-image promo-img mr-3" style="background-image: url('./img/bcd1.jpg');">
+                    <div class="bg-image promo-img mr-3" style="background-image: url('./img/IPA-bcd.png');">
                     </div>
                     <div class="content-text p-4">
                         <h3>Remplire tout les champs pour envoyer le ticket (bon de commande)</h3>
@@ -147,7 +147,7 @@
                             <div class="form-group">
                                 <label for="description">Description</label>
                                 <textarea class="form-control" required
-                                    style="resize: none;"> Entre votre description ici</textarea>
+                                    style="resize: none;">Entre votre description ici</textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block">
