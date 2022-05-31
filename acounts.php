@@ -354,10 +354,13 @@
             dob: "31/01/1999"
         },
     ];
-
+    //custom formatter definition
+    var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
+        return "<button type='button' class='btn btn-inverse-danger btn-fw'> Supprimer </button>" +
+            "<button type='button' style=\"margin-left: 10px;\" class='btn btn-inverse-info btn-fw'> Modifier </button>";
+    };
     //create Tabulator on DOM element with id "example-table"
     var table = new Tabulator("#example-table", {
-        width: 1578,
         height: 633,
         data: tabledata, //assign data to table
         layout: "fitColumns", //fit columns to width of table (optional)
@@ -374,21 +377,14 @@
                 formatter: "progress"
             },
             {
-                title: "Favourite Color",
-                field: "col"
-            },
-            {
-                title: "Date Of Birth",
-                field: "dob",
-                sorter: "date",
-                hozAlign: "center"
+                title: "Action",
+                formatter: deleteIcon,
+                hozAlign: "center",
+                cellClick: function(e, cell) {
+                    alert("Printing row data for:" + cell.getRow().getData().name)
+                }
             },
         ],
-    });
-
-    //trigger an alert message when the row is clicked
-    table.on("rowClick", function(e, row) {
-        alert("Row " + row.getData().id + " Clicked!!!!");
     });
     </script>
 </body>
