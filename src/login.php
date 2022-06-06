@@ -7,7 +7,7 @@
    $password = trim($_POST['password']);
    if($username != "" && $password != "") {
       try {
-         $query = "select * from `users` where `username`=:username and `password`=:password";
+         $query = "select * from `users` where `userName`=:username and `userPassword`=:password";
          $stmt = $connection->prepare($query);
          $stmt->bindParam('username', $username, PDO::PARAM_STR);
          $stmt->bindValue('password', $password, PDO::PARAM_STR);

@@ -317,72 +317,74 @@
     <!-- End custom js for this page-->
     <script type="text/javascript" src="./vendor/tabulator/dist/js/tabulator.min.js"></script>
     <script>
-    //define some sample data
-    var tabledata = [{
-            id: 1,
-            name: "Oli Bob",
-            age: "12",
-            col: "red",
-            dob: ""
-        },
-        {
-            id: 2,
-            name: "Mary May",
-            age: "1",
-            col: "blue",
-            dob: "14/05/1982"
-        },
-        {
-            id: 3,
-            name: "Christine Lobowski",
-            age: "42",
-            col: "green",
-            dob: "22/05/1982"
-        },
-        {
-            id: 4,
-            name: "Brendon Philips",
-            age: "125",
-            col: "orange",
-            dob: "01/08/1980"
-        },
-        {
-            id: 5,
-            name: "Margret Marmajuke",
-            age: "16",
-            col: "yellow",
-            dob: "31/01/1999"
-        },
-    ];
     //custom formatter definition
     var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
-        return "<button type='button' class='btn btn-inverse-danger btn-fw' data-toggle='modal' data-target ='#account'> Supprimer </button>" +
-            "<button type='button' style=\"margin-left: 10px;\" class='btn btn-inverse-info btn-fw'> Modifier </button>";
+        return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
+            "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
+            "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
     };
+    // delete  user
+    var id = "";
+
+    function deleteUser() {
+        if (confirm("vous etes sur ?")) {
+            console.log("id deleted : " + id)
+        } else {
+            console.log("Declined")
+        }
+    }
     //create Tabulator on DOM element with id "example-table"
     var table = new Tabulator("#example-table", {
+        ajaxURL: "src/accounts.php", //ajax URL
         height: 633,
-        data: tabledata, //assign data to table
         layout: "fitColumns", //fit columns to width of table (optional)
         columns: [ //Define Table Columns
             {
-                title: "Name",
-                field: "name",
+                title: "nom",
+                field: "nom",
                 width: 150
             },
             {
-                title: "Age",
-                field: "age",
-                hozAlign: "left",
-                formatter: "progress"
+                title: "prenom",
+                field: "prenom",
+                width: 150
+            },
+            {
+                title: "matricule",
+                field: "matricule",
+                width: 150
+            },
+            {
+                title: "email",
+                field: "email",
+                width: 150
+            },
+            {
+                title: "fonction",
+                field: "fonction",
+                width: 150
+            },
+            {
+                title: "userName",
+                field: "userName",
+                width: 150
+            },
+            {
+                title: "userRole",
+                field: "userRole",
+                width: 150
             },
             {
                 title: "Action",
+                headerHozAlign: "center",
                 formatter: deleteIcon,
                 hozAlign: "center",
                 cellClick: function(e, cell) {
-                    alert("Printing row data for:" + cell.getRow().getData().name)
-                }
+                    //e - the click event object
+                    //cell - cell component
+                    id = cell.getData().id;
+                    console.log("id :" + id);
+                },
             },
         ],
     });
