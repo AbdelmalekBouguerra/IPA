@@ -298,7 +298,7 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-
+    <?php include 'partials/model-ticket-accounts.php'; ?>
     <!-- base:js -->
     <script src="admin/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -356,7 +356,7 @@
     ];
     //custom formatter definition
     var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
-        return "<button type='button' class='btn btn-inverse-danger btn-fw'> Supprimer </button>" +
+        return "<button type='button' class='btn btn-inverse-danger btn-fw' data-toggle='modal' data-target ='#account'> Supprimer </button>" +
             "<button type='button' style=\"margin-left: 10px;\" class='btn btn-inverse-info btn-fw'> Modifier </button>";
     };
     //create Tabulator on DOM element with id "example-table"
