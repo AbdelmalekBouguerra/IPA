@@ -264,12 +264,6 @@
                             <span class="menu-title">Gestion comptes</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tickets.php">
-                            <i class="typcn typcn-ticket menu-icon"></i>
-                            <span class="menu-title">Gestion tickets</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
             <!-- partial -->

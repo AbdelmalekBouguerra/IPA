@@ -325,14 +325,14 @@
     <script>
     //custom formatter definition
     var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
-        return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
+        return "<button type='button' class='btn btn-inverse-info btn-fw' onClick=\"confirmAccepte();\"> Accepter </button>" +
             "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
-            "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
+            "class = 'btn btn-inverse-danger btn-fw'> Refuser </button>";
     };
     // delete  user
     var id = "";
 
-    function deleteUser() {
+    function confirmAccepte() {
         if (confirm("vous etes sur ?")) {
             console.log("id deleted : " + id)
         } else {
@@ -341,43 +341,33 @@
     }
     //create Tabulator on DOM element with id "example-table"
     var table = new Tabulator("#example-table", {
-        ajaxURL: "src/accounts.php", //ajax URL
+        ajaxURL: "src/tickets-admin.php", //ajax URL
         height: 633,
         layout: "fitColumns", //fit columns to width of table (optional)
         columns: [ //Define Table Columns
             {
-                title: "nom",
+                title: "id Ticket",
+                field: "id",
+                width: 150
+            },
+            {
+                title: "Nom propriétaire",
                 field: "nom",
                 width: 150
             },
             {
-                title: "prenom",
+                title: "Prenom propriétaire",
                 field: "prenom",
                 width: 150
             },
             {
-                title: "matricule",
-                field: "matricule",
-                width: 150
+                title: "description Ticket",
+                field: "descriptionTicket",
+                width: 300
             },
             {
-                title: "email",
-                field: "email",
-                width: 150
-            },
-            {
-                title: "fonction",
-                field: "fonction",
-                width: 150
-            },
-            {
-                title: "userName",
-                field: "userName",
-                width: 150
-            },
-            {
-                title: "userRole",
-                field: "userRole",
+                title: "type de Ticket",
+                field: "typeTicket",
                 width: 150
             },
             {
