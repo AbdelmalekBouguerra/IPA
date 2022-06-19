@@ -6,4 +6,8 @@
         ✔ btn 1 : accepte @done(22-06-11 20:59)
         ✔ btn 2 : refuse @done(22-06-11 20:59)
         ✘ creat model(refuse) @cancelled(22-06-11 20:56)
-
+    Home:
+        ☐ fix title
+        ☐ add counter
+        ☐ add status to ticket to count how muche open and closed
+        ☐ add action button
