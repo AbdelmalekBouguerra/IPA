@@ -37,9 +37,9 @@ include 'src/ticket.php';
         <?php include "partials/navbar.html" ?>
 
         <section class="breadcrumb_area">
-            <h2 class="container" style="font-size: 50px;padding-left: 30px;margin-left: 400px;">
+            <h2 class="container" style="font-size: 50px;padding-left: 80px;margin-left: 400px;">
                 Bonjours:
-                <?php echo $_SESSION['sess_user_name'] ?> Lorem ipsum dolor sit amet.
+                <?php echo $_SESSION['sess_user_name'] ?> dans votre Platforme.
             </h2>
 
             <img class="p_absolute bl_left" src="img/v.svg" alt="" />
@@ -93,10 +93,10 @@ include 'src/ticket.php';
                             <div class="support-info">
                                 <ul class="support-total-info">
                                     <li class="open-ticket">
-                                        <i class="icon_info_alt"></i>576 Open
+                                        <i class="icon_info_alt"></i><?php echo $openCount?> Open
                                     </li>
                                     <li class="close-ticket">
-                                        <i class="icon_check"></i><a href="#">2,974 Closed</a>
+                                        <i class="icon_check"></i><?php echo $closeCount?> Closed
                                     </li>
                                 </ul>
                             </div>
@@ -133,10 +133,19 @@ include 'src/ticket.php';
                                 <div class="post-meta-wrapper">
                                     <ul class="post-meta-info">
                                         <li>
-                                            <a href="#"><i class="icon_chat_alt"></i>20</a>
+                                            <form action="./src/ticket.php" onsubmit="deleteTicket();"
+                                                name="deleteTicket">
+                                                <button type="submit" class="btn btn-outline-info">
+                                                    <i class="icon_pencil-edit"></i>
+                                                </button>
+                                            </form>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="icon_star"></i>5</a>
+                                            <form action="./src/ticket.php" name="deleteTicket">
+                                                <button type="submit" class="btn btn-outline-danger">
+                                                    <i class="icon_trash_alt"></i>
+                                                </button>
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>
@@ -194,41 +203,6 @@ include 'src/ticket.php';
                                     </li>
                                 </ul>
                             </div>
-                            <div class="widget ticket_widget">
-                                <h4 class="c_head">Ticket Categories</h4>
-
-                                <ul class="list-unstyled ticket_categories">
-                                    <li>
-                                        <img src="img/home_support/cmm5.png" alt="category" /><a href="#">Docs WordPress
-                                            Theme</a>
-                                        <span class="count">10</span>
-                                    </li>
-                                    <li>
-                                        <img src="img/home_support/cmm4.png" alt="category" /><a href="#">Product
-                                            Landing Page</a><span class="count count-fill">13</span><span
-                                            class="count">54</span>
-                                    </li>
-                                    <li>
-                                        <img src="img/home_support/cmm2.png" alt="category" /><a href="#">Knowledge base
-                                            Template</a><span class="count">142</span>
-                                    </li>
-                                    <li>
-                                        <img src="img/home_support/cmm8.png" alt="category" /><a href="#">Startup and
-                                            App WP Theme</a>
-                                        <span class="count">13</span>
-                                    </li>
-                                    <li>
-                                        <img src="img/home_support/cmm9.png" alt="category" /><a href="#">Clean Email
-                                            Template</a>
-                                        <span class="count">123</span>
-                                    </li>
-                                    <li>
-                                        <img src="img/home_support/cmm10.png" alt="category" /><a href="#">Apps
-                                            WordPress Theme</a>
-                                        <span class="count">18</span>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                     <!-- /.col-lg-4 -->
@@ -277,6 +251,15 @@ include 'src/ticket.php';
             width: "100%"
         });
     });
+    </script>
+
+    <!-- delet and edit ticket scirpt -->
+    <script>
+    function deleteTicket() {
+        if (window.confirm("Vous êtes sûr de supprimer cette ticket Ce processus est irréversible ?")) {
+            return false;
+        }
+    }
     </script>
 </body>
 
