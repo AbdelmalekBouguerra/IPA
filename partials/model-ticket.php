@@ -131,23 +131,24 @@
                                 <label for="exampleSelect">Type de commande</label>
                                 <select name="type-ticket" onchange="yesnoCheck(this);" class="form-control"
                                     id="exampleSelect">
-                                    <option value="AM" selected>Achat matériel</option>
-                                    <option value="RP">Remplacement de piece</option>
-                                    <option value="RM">Reparation de matériel</option>
+                                    <option value="Achat matériel" selected>Achat matériel</option>
+                                    <option value="Remplacement de piece">Remplacement de piece</option>
+                                    <option value="Reparation de matériel">Reparation de matériel</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="materiel">Matériel</label>
-                                <select id="materiel" class="form-control chzn-select " multiple="true" name="faculty">
-                                    <option value="RP">pc</option>
-                                    <option value="AM">imprimant</option>
-                                    <option value="RM">scaner</option>
+                                <select id="materiel" class="form-control chzn-select " multiple="true"
+                                    name="materiel[]">
+                                    <option value="pc">pc</option>
+                                    <option value="imprimant">imprimant</option>
+                                    <option value="scaner">scaner</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea class="form-control" required
-                                    style="resize: none;">Entre votre description ici</textarea>
+                                <textarea class="form-control" required name="desc"
+                                    placeholder="Entre votre description ici" style="resize: none;"></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block">

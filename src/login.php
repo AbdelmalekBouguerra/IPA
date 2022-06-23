@@ -17,7 +17,7 @@
          if($count == 1 && !empty($row)) {
          /******************** Your code ***********************/
          $_SESSION['sess_user_id']   = $row['id'];
-         $_SESSION['sess_user_name'] = $row['username'];
+         $_SESSION['sess_user_name'] = $row['userName'];
          header('location:home.php');
          } else {
             $msg = "Invalid username and password!";
