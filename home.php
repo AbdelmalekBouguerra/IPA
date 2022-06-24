@@ -5,6 +5,24 @@ if (!(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "")) {
     header('location:signin.php');
 }
 include 'src/ticket.php';
+
+// deleting a ticket 
+if(isset($_POST['idDeletedTicket'])) {
+    $idDeletedTicket = trim($_POST['idDeletedTicket']);
+    try {
+        $query = "DELETE FROM ticket WHERE id=:id;";
+        $stmt = $connection->prepare($query);
+        $stmt->bindParam('id', $idDeletedTicket, PDO::PARAM_INT);
+        $stmt->execute();
+        header("Refresh:0");
+    } catch (PDOException $e) {
+        echo "Error : ".$e->getMessage();
+    }
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,15 +151,20 @@ include 'src/ticket.php';
                                 <div class="post-meta-wrapper">
                                     <ul class="post-meta-info">
                                         <li>
-                                            <form action="./src/ticket.php" onsubmit="deleteTicket();"
-                                                name="deleteTicket">
-                                                <button type="submit" class="btn btn-outline-info">
-                                                    <i class="icon_pencil-edit"></i>
-                                                </button>
-                                            </form>
+                                            <!-- <form method="POST" action="#" name="" onSubmit=""> -->
+                                            <!-- <input type="hidden" name="idEditedTicket" -->
+                                            <!-- value=<?php //echo $ticket["id"];?>> -->
+                                            <button data-toggle="modal" data-target="#exampleModalCenter" type="button"
+                                                class="btn btn-outline-info">
+                                                <i class="icon_pencil-edit"></i>
+                                            </button>
+                                            <!-- </form> -->
                                         </li>
                                         <li>
-                                            <form action="./src/ticket.php" name="deleteTicket">
+                                            <form method="POST" action="" name="postDeleteTicket"
+                                                onSubmit="deleteTicket(event);">
+                                                <input type="hidden" name="idDeletedTicket"
+                                                    value=<?php echo $ticket["id"];?>>
                                                 <button type="submit" class="btn btn-outline-danger">
                                                     <i class="icon_trash_alt"></i>
                                                 </button>
@@ -216,9 +239,9 @@ include 'src/ticket.php';
                 <div class="action-content-wrapper">
                     <div class="action-title-wrap title-img">
                         <img src="img/home_support/chat-smile.png" alt="" />
-                        <h2 class="action-title">Contacter IPA disck</h2>
+                        <h2 class="action-title">Contactez nous</h2>
                     </div>
-                    <a href="#" class="action_btn"> <i class="arrow_right"></i></a>
+                    <a href="./contact.php" class="action_btn"> <i class="arrow_right"></i></a>
                 </div>
                 <!-- /.action-content-wrapper -->
             </div>
@@ -256,8 +279,10 @@ include 'src/ticket.php';
     <!-- delet and edit ticket scirpt -->
     <script>
     function deleteTicket() {
-        if (window.confirm("Vous êtes sûr de supprimer cette ticket Ce processus est irréversible ?")) {
-            return false;
+
+        if (!window.confirm("Vous êtes sûr de supprimer cette ticket Ce processus est irréversible ?")) {
+            event.preventDefault();
+            console.log("submit prevented");
         }
     }
     </script>
