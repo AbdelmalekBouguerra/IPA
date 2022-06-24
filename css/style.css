@@ -4134,7 +4134,7 @@ ul.list-style li:last-child {
   border-left: 1px solid #e8ecee;
   margin-left: -20px;
   padding-left: 30px;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   height: 100%;
 }
 .doc_rightsidebar .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
@@ -4534,7 +4534,7 @@ ul.list-style li:last-child {
   height: 100%;
 }
 .doc_rightsidebar .doc_switch {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   margin-left: -40px;
   margin-top: 10px;
   padding-left: 40px;

@@ -56,26 +56,33 @@
                         <div class="shortcode_info" id="post">
                             <div class="shortcode_title">
                                 <h1>IPA HELP</h1>
-                                <p><span>Welcome to IPA !</span> Trouver les reponses de votre qestions et garanti une vu claire surzz</p>
+                                <p><span>Welcome to IPA !</span> Trouver les reponses de votre qestions et garanti une
+                                    vu claire surzz</p>
                             </div>
                             <div class="toggle_shortcode">
                                 <div class="shortcode_title">
                                     <h4 class="s_title load-order-2" id="toggle">ETAPS</h4>
-                                    <p>suivier les taches pour  faciliter votre utilisation   </p>
+                                    <p>suivier les taches pour faciliter votre utilisation </p>
                                 </div>
                                 <a class="toggle_btn" data-toggle="collapse" href="#multiCollapseExample1" role="button"
-                                    aria-expanded="false" aria-controls="multiCollapseExample1">  Comment puis-je vous contacter  ?  </a>
+                                    aria-expanded="false" aria-controls="multiCollapseExample1"> Comment puis-je vous
+                                    contacter ? </a>
                                 <div class="collapse multi-collapse show" id="multiCollapseExample1">
-                                    <div class="card card-body toggle_body">  </div>
+                                    <div class="card card-body toggle_body">
+                                        <iframe src="https://scribehow.com/embed/Contacte_nous__imWXEwCXQs2gjvziXMCU2A"
+                                            width="640" height="640" allowfullscreen frameborder="0" style="margin-left:
+                                            200px;"></iframe>
+                                    </div>
                                 </div>
                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse"
                                     href="#multiCollapseExample2" role="button" aria-expanded="false"
                                     aria-controls="multiCollapseExample2">Comment puis je cree mon ticket?</a>
                                 <div class="collapse multi-collapse" id="multiCollapseExample2">
                                     <div class="card card-body toggle_body">
-                                        <iframe src="https://scribehow.com/embed/KbDoc__iC5E3sOPQgStUd-9gfbF9A"
+                                        <iframe
+                                            src="https://scribehow.com/embed/Ajoute_un_Ticket__N2UzfQJHTIOfHqaxvz-b9g"
                                             width="640" height="640" allowfullscreen frameborder="0" style="margin-left:
-                                            200px;"></iframe>
+                                                200px;"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -92,20 +99,28 @@
                                                 <button class="btn btn-link" data-toggle="collapse"
                                                     data-target="#collapseOne" aria-expanded="true"
                                                     aria-controls="collapseOne">
-                                                    Je ne peux pas me connecter à mon compte. Que faire?<i class="icon_plus"></i><i class="icon_minus-06"></i>
+                                                    Je ne peux pas me connecter à mon compte. Que faire?<i
+                                                        class="icon_plus"></i><i class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
                                         </div>
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                            our vous connecter à votre compte, assurez-vous de saisir la bonne adresse e-mail (ou l'ID de membre) et le mot de passe correspondant. Votre mot de passe est sensible à la casse, vérifiez donc que la touche Verr Maj est activée sur votre clavier et que le mot de passe ne comporte aucune espace en trop. Parmi les autres solutions figurent :
+                                                our vous connecter à votre compte, assurez-vous de saisir la bonne
+                                                adresse e-mail (ou l'ID de membre) et le mot de passe correspondant.
+                                                Votre mot de passe est sensible à la casse, vérifiez donc que la touche
+                                                Verr Maj est activée sur votre clavier et que le mot de passe ne
+                                                comporte aucune espace en trop. Parmi les autres solutions figurent :
 
-1. Supprimez les cookies ou changez de navigateur
-2. Essayez le processus de récupération de mot de passe
-3. Si vous recevez un message d'erreur indiquant « Désolé, vous n'être pas autorisé à vous connecter à ce compte », contactez notre équipe du service client
+                                                1. Supprimez les cookies ou changez de navigateur
+                                                2. Essayez le processus de récupération de mot de passe
+                                                3. Si vous recevez un message d'erreur indiquant « Désolé, vous n'être
+                                                pas autorisé à vous connecter à ce compte », contactez notre équipe du
+                                                service client
 
-Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté des informations importantes concernant votre compte.
+                                                Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté
+                                                des informations importantes concernant votre compte.
                                             </div>
                                         </div>
                                     </div>
@@ -115,16 +130,18 @@ Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté des 
                                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseTwo" aria-expanded="false"
                                                     aria-controls="collapseTwo">
-                                                    
-                                                    Je n'ai pas reçu ma commande . Que puis-je faire ?<i class="icon_plus"></i><i
-                                                        class="icon_minus-06"></i>
+
+                                                    Je n'ai pas reçu ma commande . Que puis-je faire ?<i
+                                                        class="icon_plus"></i><i class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
                                         </div>
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                            Contactez IPA disk  pour plus d'informations ou ouvree le ticket pour obtenir le code. Assurez-vous d'ouvrir le ticket avant la fin de la période.
+                                                Contactez IPA disk pour plus d'informations ou ouvree le ticket pour
+                                                obtenir le code. Assurez-vous d'ouvrir le ticket avant la fin de la
+                                                période.
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +151,8 @@ Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté des 
                                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseThree" aria-expanded="false"
                                                     aria-controls="collapseThree">
-                                                    Je n'ai pas reçu la validation de mon ticket sur mon compte. Que puis-je faire? <i class="icon_plus"></i><i
+                                                    Je n'ai pas reçu la validation de mon ticket sur mon compte. Que
+                                                    puis-je faire? <i class="icon_plus"></i><i
                                                         class="icon_minus-06"></i>
                                                 </button>
                                             </h5>
@@ -142,7 +160,7 @@ Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté des 
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                             data-parent="#accordion">
                                             <div class="card-body toggle_body">
-                                            
+
 
                                             </div>
                                         </div>
@@ -171,27 +189,12 @@ Remarque : vérifiez votre boîte de réception. Vous avez peut-être raté des 
                             <i class="arrow_carrot-right"></i>
                         </div>
                         <div class="doc_rightsidebar scroll">
-                            <select id="mySelect" name="os">
-                                <option value="windows" data-content="<i class='fab fa-windows'></i> Windows">Windows
-                                </option>
-                                <option value="ios" data-content="<i class='fab fa-apple'></i> Ios">Ios</option>
-                                <option value="linux" data-content="<i class='fab fa-linux'></i> Linux">Linux</option>
-                            </select>
-                            <div id="font-switcher" class="d-flex justify-content-between align-items-center">
-                                <div id="rvfs-controllers" class="fontsize-controllers group"></div>
-                                <a href="javascript:window.print()" class="print"><i class="icon_printer"></i></a>
-                            </div>
                             <div class="doc_switch">
                                 <label for="something" class="tab-btn tab-btns"><i
                                         class="icon_lightbulb_alt"></i></label>
                                 <input type="checkbox" name="something" id="something" class="tab_switcher">
                                 <label for="something" class="tab-btn"><i class="far fa-moon"></i></label>
                             </div>
-                            <h6>On this page:</h6>
-                            <nav class="list-unstyled doc_menu" id="navbar-example3">
-                                <a href="#toggle" class="nav-link">Toggle</a>
-                                <a href="#accordions" class="nav-link">Accordion</a>
-                            </nav>
                         </div>
                     </div>
                 </div>
