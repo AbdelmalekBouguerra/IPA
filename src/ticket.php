@@ -25,7 +25,7 @@
       }
       // =====================================================================
 
-      // fetching $openCount=====================================================
+      // fetching $closeCount=====================================================
       try {
       $query = "SELECT COUNT(status) FROM ticket WHERE idUser =:id AND status =\"closed\"";
       $stmt = $connection->prepare($query);
@@ -41,7 +41,7 @@
       if(isset($_POST['type-ticket'])) {
          $typeTicket = trim($_POST['type-ticket']);
          $desc = trim($_POST['desc']);
-         // turn array to string devided by ","
+         // turn array to string divided by ","
          $materiels = implode(",", $_POST['materiel']);
          try {
             $query = "INSERT INTO ticket(typeTicket,idUser,materiel,descriptionTicket)

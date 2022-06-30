@@ -270,6 +270,36 @@
                             <span class="menu-title">Gestion tickets</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="materiel.php">
+                            <i class="typcn typcn-device-desktop menu-icon"></i>
+                            <span class="menu-title">Gestion materiel</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fournisseur.php">
+                            <i class="typcn typcn-contacts menu-icon"></i>
+                            <span class="menu-title">Gestion fournisseur</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Service</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="departement.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Departement</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="direction.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Direction</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- partial -->
@@ -285,14 +315,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
-                                    2020 <a href="https://www.bootstrapdash.com/" class="text-muted"
-                                        target="_blank">Bootstrapdash</a>. All
-                                    rights reserved.</span>
-                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center text-muted">Free
-                                    <a href="https://www.bootstrapdash.com/" class="text-muted"
-                                        target="_blank">Bootstrap dashboard</a>
-                                    templates from Bootstrapdash.com</span>
+                                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright
+                                    ©
+                                    2022 Assia Boutakhedmit rights reserved.</span>
                             </div>
                         </div>
                     </div>

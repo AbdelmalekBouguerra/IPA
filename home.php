@@ -20,9 +20,6 @@ if(isset($_POST['idDeletedTicket'])) {
     }
 }
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,8 +122,7 @@ if(isset($_POST['idDeletedTicket'])) {
 
                         <div class="community-posts-wrapper bb-radius">
 
-                            <?php
-                            // hya ntstiw doka  
+                            <?php 
                             foreach ($tickets as $ticket) { ?>
                             <div class="community-post style-two kbDoc richard bug">
                                 <div class="post-content">
@@ -135,16 +131,21 @@ if(isset($_POST['idDeletedTicket'])) {
                                     </div>
                                     <div class="entry-content">
                                         <h3 class="post-title">
-                                            <a
-                                                href="forum-single.html"><?php echo "Bon commande " . $ticket["id"]; ?></a>
+                                            <p><?php echo "Bon commande #" . $ticket["id"]; ?></p>
                                         </h3>
                                         <ul class="meta">
                                             <li>
-                                                <img src="img/home_support/cmm1.png" alt="cmm" /><a
-                                                    href="#"><?php echo "Type de ticket est " . $ticket["typeTicket"]; ?>
-                                                </a>
+                                                <img src="img/home_support/cmm1.png" alt="cmm" />
+                                                <a><?php echo$ticket["typeTicket"]; ?></a>
                                             </li>
-                                            <li><i class="icon_calendar"></i>updated 3 days ago</li>
+                                            <li><i class="icon_calendar">
+                                                </i>
+                                                <?php
+                                                $date = $ticket["time"];
+                                                // $diff = $date->diff((new DateTime()));
+                                                echo 'actualisé le ' . $date;
+                                                ?>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>

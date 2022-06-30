@@ -267,6 +267,36 @@
                             <span class="menu-title">Gestion tickets</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="materiel.php">
+                            <i class="typcn typcn-device-desktop menu-icon"></i>
+                            <span class="menu-title">Gestion materiel</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fournisseur.php">
+                            <i class="typcn typcn-contacts menu-icon"></i>
+                            <span class="menu-title">Gestion fournisseur</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Service</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="departement.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Departement</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="direction.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Direction</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- partial -->

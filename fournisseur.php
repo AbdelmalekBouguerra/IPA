@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>IPA Admin Panel - Materiel</title>
+    <title>IPA Admin Panel - Fournisseur</title>
     <!-- base:css -->
     <link rel="stylesheet" href="admin/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="admin/vendors/css/vendor.bundle.base.css">
@@ -230,12 +230,12 @@
                 </ul>
             </nav>
             <!-- partial -->
-            <?php include './partials/model-add-mat.php'; ?>
+            <?php include './partials/model-add-fou.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
-                        <button type='button' data-toggle='modal' data-target='#add-materiel'
-                            class='btn mb-3 ml-3 btn-inverse-success btn-fw'> Ajoute materiel</button>
+                        <button type='button' data-toggle='modal' data-target='#add-fournisseur'
+                            class='btn mb-3 ml-3 btn-inverse-success btn-fw'> Ajoute Fournisseur</button>
                         <div id="example-table" style="width: 1610px;"></div> <!-- here the table -->
                     </div>
                 </div>
@@ -295,41 +295,29 @@
     }
     //create Tabulator on DOM element with id "example-table"
     var table = new Tabulator("#example-table", {
-        ajaxURL: "src/materiel.php", //ajax URL
+        ajaxURL: "src/fournisseur.php", //ajax URL
         height: 633,
         layout: "fitColumns", //fit columns to width of table (optional)
         columns: [ //Define Table Columns
             {
-                title: "idUser",
-                field: "idUser",
+                title: "id",
+                field: "id",
                 width: 150
             },
             {
-                title: "idFournisseur",
-                field: "idFournisseur",
-                width: 150
-            },
-            {
-                title: "libelle",
+                title: "Libellé",
                 field: "libelle",
                 width: 150
             },
             {
-                title: "Numéro de série",
-                field: "nSerie",
+                title: "Adresse",
+                field: "adress",
+                width: 500
+            },
+            {
+                title: "Numéro de telephone",
+                field: "num_tele",
                 width: 150
-            },
-            {
-                title: "date debut garantie",
-                field: "dateDebutGarantie",
-                width: 200,
-                sorter: "date"
-            },
-            {
-                title: "date fin garantie",
-                field: "dateFinGarantie",
-                width: 200,
-                sorter: "date"
             },
             {
                 title: "Action",

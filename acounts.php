@@ -172,79 +172,6 @@
                         </div>
                     </div>
                     <!-- To do section tab ends -->
-                    <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
-                        <div class="d-flex align-items-center justify-content-between border-bottom">
-                            <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-                            <small
-                                class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See
-                                All</small>
-                        </div>
-                        <ul class="chat-list">
-                            <li class="list active">
-                                <div class="profile"><img src="admin/images/faces/face1.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Thomas Douglas</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">19 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face2.jpg" alt="image"><span
-                                        class="offline"></span>
-                                </div>
-                                <div class="info">
-                                    <div class="wrapper d-flex">
-                                        <p>Catherine</p>
-                                    </div>
-                                    <p>Away</p>
-                                </div>
-                                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
-                                <small class="text-muted my-auto">23 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face3.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Daniel Russell</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">14 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face4.jpg" alt="image"><span
-                                        class="offline"></span>
-                                </div>
-                                <div class="info">
-                                    <p>James Richardson</p>
-                                    <p>Away</p>
-                                </div>
-                                <small class="text-muted my-auto">2 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face5.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Madeline Kennedy</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">5 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face6.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Sarah Graves</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">47 min</small>
-                            </li>
-                        </ul>
-                    </div>
                     <!-- chat tab ends -->
                 </div>
             </div>
@@ -270,12 +197,46 @@
                             <span class="menu-title">Gestion tickets</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="materiel.php">
+                            <i class="typcn typcn-device-desktop menu-icon"></i>
+                            <span class="menu-title">Gestion materiel</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fournisseur.php">
+                            <i class="typcn typcn-contacts menu-icon"></i>
+                            <span class="menu-title">Gestion fournisseur</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Service</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="departement.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Departement</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="direction.php">
+                            <i class="typcn typcn-group-outline menu-icon"></i>
+                            <span class="menu-title">Gestion Direction</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- partial -->
+            <?php include './partials/model-add-acc.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
+                        <button type='button' data-toggle='modal' data-target='#add-account'
+                            class='btn mb-3 ml-3 btn-inverse-success btn-fw'> Ajoute un
+                            utilsateur</button>
                         <div id="example-table" style="width: 1610px;"></div> <!-- here the table -->
                     </div>
                 </div>
@@ -286,13 +247,7 @@
                         <div class="card-body">
                             <div class="d-sm-flex justify-content-center justify-content-sm-between">
                                 <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
-                                    2020 <a href="https://www.bootstrapdash.com/" class="text-muted"
-                                        target="_blank">Bootstrapdash</a>. All
-                                    rights reserved.</span>
-                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center text-muted">Free
-                                    <a href="https://www.bootstrapdash.com/" class="text-muted"
-                                        target="_blank">Bootstrap dashboard</a>
-                                    templates from Bootstrapdash.com</span>
+                                    2022 Assia Boutakhedmit rights reserved.</span>
                             </div>
                         </div>
                     </div>
