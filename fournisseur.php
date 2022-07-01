@@ -27,10 +27,10 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex justify-content-center">
                 <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                    <a class="navbar-brand brand-logo" href="admin.html"><img src="images/logo-mini.svg"
-                            alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="admin.html"><img src="images/logo-mini.svg"
-                            alt="logo" /></a>
+                    <a class="navbar-brand brand-logo" href="admin.html"><img src="./img/logo-white-ipa.png" alt="logo"
+                            style=" width: 50px;" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="admin.html"><img src="./img/logo-white-ipa.png"
+                            alt="logo" style=" width: 50px;" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
                         data-toggle="minimize">
                         <span class="typcn typcn-th-menu"></span>
@@ -277,62 +277,62 @@
     <!-- End custom js for this page-->
     <script type="text/javascript" src="./vendor/tabulator/dist/js/tabulator.min.js"></script>
     <script>
-    //custom formatter definition
-    var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
-        return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
-            "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
-            "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
-    };
-    // delete  user
-    var id = "";
+        //custom formatter definition
+        var deleteIcon = function (cell, formatterParams, onRendered) { //plain text value
+            return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
+                "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
+                "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
+        };
+        // delete  user
+        var id = "";
 
-    function deleteUser() {
-        if (confirm("vous etes sur ?")) {
-            console.log("id deleted : " + id)
-        } else {
-            console.log("Declined")
+        function deleteUser() {
+            if (confirm("vous etes sur ?")) {
+                console.log("id deleted : " + id)
+            } else {
+                console.log("Declined")
+            }
         }
-    }
-    //create Tabulator on DOM element with id "example-table"
-    var table = new Tabulator("#example-table", {
-        ajaxURL: "src/fournisseur.php", //ajax URL
-        height: 633,
-        layout: "fitColumns", //fit columns to width of table (optional)
-        columns: [ //Define Table Columns
-            {
-                title: "id",
-                field: "id",
-                width: 150
-            },
-            {
-                title: "Libellé",
-                field: "libelle",
-                width: 150
-            },
-            {
-                title: "Adresse",
-                field: "adress",
-                width: 500
-            },
-            {
-                title: "Numéro de telephone",
-                field: "num_tele",
-                width: 150
-            },
-            {
-                title: "Action",
-                headerHozAlign: "center",
-                formatter: deleteIcon,
-                hozAlign: "center",
-                cellClick: function(e, cell) {
-                    //e - the click event object
-                    //cell - cell component
-                    id = cell.getData().id;
-                    console.log("id :" + id);
+        //create Tabulator on DOM element with id "example-table"
+        var table = new Tabulator("#example-table", {
+            ajaxURL: "src/fournisseur.php", //ajax URL
+            height: 633,
+            layout: "fitColumns", //fit columns to width of table (optional)
+            columns: [ //Define Table Columns
+                {
+                    title: "id",
+                    field: "id",
+                    width: 150
                 },
-            },
-        ],
-    });
+                {
+                    title: "Libellé",
+                    field: "libelle",
+                    width: 150
+                },
+                {
+                    title: "Adresse",
+                    field: "adress",
+                    width: 500
+                },
+                {
+                    title: "Numéro de telephone",
+                    field: "num_tele",
+                    width: 150
+                },
+                {
+                    title: "Action",
+                    headerHozAlign: "center",
+                    formatter: deleteIcon,
+                    hozAlign: "center",
+                    cellClick: function (e, cell) {
+                        //e - the click event object
+                        //cell - cell component
+                        id = cell.getData().id;
+                        console.log("id :" + id);
+                    },
+                },
+            ],
+        });
     </script>
 </body>
 

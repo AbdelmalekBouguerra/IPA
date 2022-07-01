@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <label for="5">User name</label>
-                            <input type="text" class="form-control" id="5" placeholder="matricule">
+                            <input type="text" class="form-control" id="5" placeholder="user name">
                         </div>
                         <div class="form-group">
                             <label for="6">User role</label>

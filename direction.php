@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>IPA Admin Panel</title>
+    <title>IPA Admin Panel - Direction</title>
     <!-- base:css -->
     <link rel="stylesheet" href="admin/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="admin/vendors/css/vendor.bundle.base.css">
@@ -14,6 +15,8 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="admin/css/vertical-layout-light/style.css">
+    <link href="./vendor/tabulator/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">
+
     <!-- endinject -->
     <link rel="shortcut icon" href="./img/logo-ipa.png" />
 </head>
@@ -25,9 +28,9 @@
             <div class="navbar-brand-wrapper d-flex justify-content-center">
                 <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
                     <a class="navbar-brand brand-logo" href="admin.html"><img src="./img/logo-white-ipa.png" alt="logo"
-                            style=" width: 50px;" /></a>
+                            style=" width: 50px;" alt="logo" /></a>
                     <a class="navbar-brand brand-logo-mini" href="admin.html"><img src="./img/logo-white-ipa.png"
-                            alt="logo" /></a>
+                            alt="logo" style=" width: 50px;" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
                         data-toggle="minimize">
                         <span class="typcn typcn-th-menu"></span>
@@ -169,79 +172,6 @@
                         </div>
                     </div>
                     <!-- To do section tab ends -->
-                    <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
-                        <div class="d-flex align-items-center justify-content-between border-bottom">
-                            <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-                            <small
-                                class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See
-                                All</small>
-                        </div>
-                        <ul class="chat-list">
-                            <li class="list active">
-                                <div class="profile"><img src="admin/images/faces/face1.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Thomas Douglas</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">19 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face2.jpg" alt="image"><span
-                                        class="offline"></span>
-                                </div>
-                                <div class="info">
-                                    <div class="wrapper d-flex">
-                                        <p>Catherine</p>
-                                    </div>
-                                    <p>Away</p>
-                                </div>
-                                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
-                                <small class="text-muted my-auto">23 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face3.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Daniel Russell</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">14 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face4.jpg" alt="image"><span
-                                        class="offline"></span>
-                                </div>
-                                <div class="info">
-                                    <p>James Richardson</p>
-                                    <p>Away</p>
-                                </div>
-                                <small class="text-muted my-auto">2 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face5.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Madeline Kennedy</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">5 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="admin/images/faces/face6.jpg" alt="image"><span
-                                        class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Sarah Graves</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">47 min</small>
-                            </li>
-                        </ul>
-                    </div>
                     <!-- chat tab ends -->
                 </div>
             </div>
@@ -286,9 +216,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="departement.php">
+                        <a class="nav-link" href="direction.php">
                             <i class="typcn typcn-group-outline menu-icon"></i>
-                            <span class="menu-title">Gestion Departement</span>
+                            <span class="menu-title">Gestion Direction</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -300,128 +230,14 @@
                 </ul>
             </nav>
             <!-- partial -->
+            <?php include './partials/model-add-dir.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
-                        <div class="col-xl-6 grid-margin stretch-card flex-column">
-                            <h5 class="mb-2 text-titlecase mb-4">Statistiques des tickets</h5>
-                            <div class="row h-100">
-                                <div class="col-md-12 stretch-card">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                                <div>
-                                                    <p class="mb-3">Ticket soumis mensuellement</p>
-                                                    <h3>200</h3>
-                                                </div>
-                                                <div id="income-chart-legend" class="d-flex flex-wrap mt-1 mt-md-0">
-                                                </div>
-                                            </div>
-                                            <canvas id="income-chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="chartjs-size-monitor">
-                                        <div class="chartjs-size-monitor-expand">
-                                            <div class=""></div>
-                                        </div>
-                                        <div class="chartjs-size-monitor-shrink">
-                                            <div class=""></div>
-                                        </div>
-                                    </div>
-                                    <canvas id="sales-chart-c" class="mt-2 chartjs-render-monitor"
-                                        style="display: block; width: 461px; height: 230px;" width="461"
-                                        height="230"></canvas>
-                                    <div
-                                        class="d-flex align-items-center justify-content-between border-bottom pb-3 mt-4">
-                                        <div class="d-flex flex-column justify-content-center align-items-center">
-                                            <p class="text-muted">Tickets soumis pour ce mois</p>
-                                            <h5>15</h5>
-                                            <div class="d-flex align-items-baseline">
-                                                <p class="text-success mb-0">0.5%</p>
-                                                <i class="typcn typcn-arrow-up-thick text-success"></i>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex flex-column justify-content-center align-items-center">
-                                            <p class="text-muted">Ticket fermé pour ce mois</p>
-                                            <h5>5</h5>
-                                            <div class="d-flex align-items-baseline">
-                                                <p class="text-success mb-0">0.8%</p>
-                                                <i class="typcn typcn-arrow-up-thick text-success"></i>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex flex-column justify-content-center align-items-center">
-                                            <p class="text-muted">Ticket non fermé pour ce mois</p>
-                                            <h5>10</h5>
-                                            <div class="d-flex align-items-baseline">
-                                                <p class="text-danger mb-0">-04%</p>
-                                                <i class="typcn typcn-arrow-down-thick text-danger"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <button type='button' data-toggle='modal' data-target='#add-direction'
+                            class='btn mb-3 ml-3 btn-inverse-success btn-fw'> Ajoute direction</button>
+                        <div id="example-table" style="width: 1610px;"></div> <!-- here the table -->
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-4 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div
-                                        class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                                        <div>
-                                            <p class="mb-2 text-md-center text-lg-left">Total Tickets pour cette année
-                                            </p>
-                                            <h1 class="mb-0">2404</h1>
-                                        </div>
-                                        <i class="typcn typcn-ticket icon-xl text-secondary"></i>
-                                    </div>
-                                    <!-- <canvas id="expense-chart" height="80"></canvas> -->
-                                    <canvas id="transactions-chart" class="mt-auto chartjs-render-monitor" height="65"
-                                        style="display: block; width: 326px; height: 65px;" width="326"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div
-                                        class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                                        <div>
-                                            <p class="mb-2 text-md-center text-lg-left">Total Tickets accepte pour cette
-                                                année</p>
-                                            <h1 class="mb-0">2247</h1>
-                                        </div>
-                                        <i class="typcn typcn-thumbs-up icon-xl text-secondary"></i>
-                                    </div>
-                                    <canvas id="budget-chart" height="80"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div
-                                        class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                                        <div>
-                                            <p class="mb-2 text-md-center text-lg-left">Total Tickets refuse pour cette
-                                                année</p>
-                                            <h1 class="mb-0">157</h1>
-                                        </div>
-                                        <i class="typcn typcn-thumbs-down icon-xl text-secondary"></i>
-                                    </div>
-                                    <canvas id="balance-chart" height="80"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
@@ -430,13 +246,7 @@
                         <div class="card-body">
                             <div class="d-sm-flex justify-content-center justify-content-sm-between">
                                 <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
-                                    2020 <a href="https://www.bootstrapdash.com/" class="text-muted"
-                                        target="_blank">Bootstrapdash</a>. All
-                                    rights reserved.</span>
-                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center text-muted">Free
-                                    <a href="https://www.bootstrapdash.com/" class="text-muted"
-                                        target="_blank">Bootstrap dashboard</a>
-                                    templates from Bootstrapdash.com</span>
+                                    2022 Assia Boutakhedmit rights reserved.</span>
                             </div>
                         </div>
                     </div>
@@ -448,7 +258,7 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-
+    <?php include 'partials/model-ticket-accounts.php'; ?>
     <!-- base:js -->
     <script src="admin/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -465,6 +275,60 @@
     <!-- Custom js for this page-->
     <script src="admin/js/dashboard.js"></script>
     <!-- End custom js for this page-->
+    <script type="text/javascript" src="./vendor/tabulator/dist/js/tabulator.min.js"></script>
+    <script>
+        //custom formatter definition
+        var deleteIcon = function (cell, formatterParams, onRendered) { //plain text value
+            return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
+                "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
+                "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
+        };
+        // delete  user
+        var id = "";
+
+        function deleteUser() {
+            if (confirm("vous etes sur ?")) {
+                console.log("id deleted : " + id)
+            } else {
+                console.log("Declined")
+            }
+        }
+        //create Tabulator on DOM element with id "example-table"
+        var table = new Tabulator("#example-table", {
+            ajaxURL: "src/direction.php", //ajax URL
+            height: 633,
+            layout: "fitColumns", //fit columns to width of table (optional)
+            columns: [ //Define Table Columns
+                {
+                    title: "id",
+                    field: "idDirection",
+                    width: 150
+                },
+                {
+                    title: "libelle",
+                    field: "libelleDirection",
+                    width: 150
+                },
+                {
+                    title: "Code de Direction",
+                    field: "codeDirection",
+                    width: 150
+                },
+                {
+                    title: "Action",
+                    headerHozAlign: "center",
+                    formatter: deleteIcon,
+                    hozAlign: "center",
+                    cellClick: function (e, cell) {
+                        //e - the click event object
+                        //cell - cell component
+                        id = cell.getData().id;
+                        console.log("id :" + id);
+                    },
+                },
+            ],
+        });
+    </script>
 </body>
 
 </html>
