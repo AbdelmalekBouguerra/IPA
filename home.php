@@ -131,7 +131,22 @@ if(isset($_POST['idDeletedTicket'])) {
                                     </div>
                                     <div class="entry-content">
                                         <h3 class="post-title">
-                                            <p><?php echo "Bon commande #" . $ticket["id"]; ?></p>
+                                            <form action="bonCommande.php" id="bc<?php echo $ticket["id"]; ?>"
+                                                method="post">
+                                                <input type="hidden" name="id" value="<?php echo $ticket["id"]; ?>">
+                                                <input type="hidden" name="descriptionTicket"
+                                                    value="<?php echo $ticket["descriptionTicket"]; ?>">
+                                                <input type="hidden" name="typeTicket"
+                                                    value="<?php echo $ticket["typeTicket"]; ?>">
+                                                <input type="hidden" name="materiel"
+                                                    value="<?php echo $ticket["materiel"]; ?>">
+                                                <input type="hidden" name="time" value="<?php echo $ticket["time"]; ?>">
+                                                <a href="javascript:;"
+                                                    onclick="document.getElementById('bc<?php echo $ticket['id']; ?>').submit()">
+                                                    <p><?php echo "Bon commande #" . $ticket["id"]; ?></p>
+                                                </a>
+                                            </form>
+
                                         </h3>
                                         <ul class="meta">
                                             <li>
