@@ -17,7 +17,7 @@ $time = trim($_POST['time']);
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
     <meta name=Generator content="Microsoft Word 15 (filtered)">
-    <title>Nouvel entete.docx</title>
+    <title>Bon de commande</title>
     <style>
     /* Font Definitions */
     @font-face {
@@ -110,19 +110,11 @@ $time = trim($_POST['time']);
         <p class=MsoBodyText style='margin-top:4.4px'><span lang=FR>&nbsp;</span></p>
 
         <p class=MsoBodyText style='margin-top:4.4px'><span lang=FR>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                N°:
+                <?php echo $id;?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 Alger le <?php echo date("d/m/Y");?>
 
                 <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
-
-                <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
-16.0px'>Numéro : <?php echo $id;?></span></p>
-
-                <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
-16.0px'>Service : <?php echo $_SESSION['libelleService'];?></span></p>
-
-                <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
-16.0px'>Emploie : <?php echo $_SESSION['nom']." ".$_SESSION['prenom'];?></span></p>
 
                 <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
 16.0px'>&nbsp;</span></p>
@@ -132,17 +124,28 @@ $time = trim($_POST['time']);
                 <p class=MsoTitle style='margin-left:72.0px'><u><span lang=FR><span
                                 style='text-decoration:none'>&nbsp;</span></span></u></p>
 
+                <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Service
+                            </span></u></b><span lang=FR style='font-size:16.0px'> :
+                        <?php echo $_SESSION['libelleService']?> </span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+
+                <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Emploie </span></u></b><span lang=FR
+                        style='font-size:16.0px'> : <?php echo $_SESSION['nom']." ".$_SESSION['prenom'];?> </span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+
                 <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Type</span></u></b><span lang=FR
                         style='font-size:16.0px'> : <?php echo $typeTicket;?> </span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
                 <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Materiel</span></u></b><span lang=FR
                         style='font-size:16.0px'> : <?php echo $materiel;?> </span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
                 <!-- <p class=MsoBodyText><span lang=FR
                 style='font-size:16.0px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span></p> -->
 
-                <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Date, heure</span></u></b><b><span
+                <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Date et heure</span></u></b><b><span
                             lang=FR style='font-size:16.0px'> : le</span></b><span lang=FR style='font-size:16.0px'>
                         <?php echo $time;?></span></p>
 
@@ -171,13 +174,16 @@ $time = trim($_POST['time']);
 
                 <p class=MsoBodyText style='margin-left:5.5px'><span lang=FR>Le<span style='letter-spacing:-.2px'>
                         </span>Responsable<span style='letter-spacing:
--.2px'> </span>CSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-.2px'>
+                        </span>CSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         Le<span style='letter-spacing:-.3px'> </span>Responsable<span style='letter-spacing:
 -.3px'> </span>du<span style='letter-spacing:-.3px'> </span>service<span style='letter-spacing:-.3px'>
                         </span>demandeur</span></p>
 
                 <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
-
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
                 <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
                 <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
@@ -196,11 +202,15 @@ $time = trim($_POST['time']);
 
                 <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
                 <p class=MsoBodyText style='margin-top:.45px'>
 
                 <table cellpadding=0 cellspacing=0 align=left>
                     <tr>
-                        <td width=59 height=0></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -218,6 +228,7 @@ $time = trim($_POST['time']);
 </html>
 <?php
 $template = ob_get_clean();
+// echo $template;
 require_once __DIR__ . '/vendor/autoload.php';
  $mpdf = new \Mpdf\Mpdf();
  $mpdf->WriteHTML($template);
