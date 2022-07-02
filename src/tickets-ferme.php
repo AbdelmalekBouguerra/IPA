@@ -2,7 +2,11 @@
 include "../config/config.php";
 // fetching users=====================================================
    try {
-   $query = "SELECT t.id, u.nom, u.prenom,t.status, t.descriptionTicket, t.typeTicket FROM ticket as t, users as u WHERE status = 'open' and t.idUser = u.id;";
+   $query = "SELECT t.id, u.nom, u.prenom,t.materiel,t.status,t.motifRefus, t.descriptionTicket, t.typeTicket FROM
+   ticket as t,
+   users
+   as u WHERE
+   status = 'fermer' and t.idUser = u.id;";
    $stmt = $connection->prepare($query);
    $stmt->execute();
    $tickets = $stmt->fetchAll(PDO::FETCH_ASSOC);

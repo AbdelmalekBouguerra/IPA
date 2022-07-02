@@ -1,4 +1,6 @@
-<?php ob_start(); 
+<?php
+session_start();
+ ob_start(); 
 // deleting a ticket
 if(isset($_POST['id'])) {
 $id = trim($_POST['id']);
@@ -11,7 +13,9 @@ $time = trim($_POST['time']);
 <html>
 
 <head>
-    <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
     <meta name=Generator content="Microsoft Word 15 (filtered)">
     <title>Nouvel entete.docx</title>
     <style>
@@ -105,105 +109,106 @@ $time = trim($_POST['time']);
 
         <p class=MsoBodyText style='margin-top:4.4px'><span lang=FR>&nbsp;</span></p>
 
-        <p class=MsoBodyText style='margin-top:4.4px'><span lang=FR>Alger<span style='letter-spacing:-.3px'>
-                </span>le<span style='letter-spacing:-.25px'> </span><?php echo date("d/m/Y");  ?></span></p>
+        <p class=MsoBodyText style='margin-top:4.4px'><span lang=FR>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                Alger le <?php echo date("d/m/Y");?>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
-16.0px'>Numero : <?php echo $id;?></span></p>
+                <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
+16.0px'>Numéro : <?php echo $id;?></span></p>
 
-        <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
-16.0px'>Service : compxabilite</span></p>
+                <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
+16.0px'>Service : <?php echo $_SESSION['libelleService'];?></span></p>
 
-        <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
-16.0px'>Emploie : Youssra</span></p>
+                <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
+16.0px'>Emploie : <?php echo $_SESSION['nom']." ".$_SESSION['prenom'];?></span></p>
 
-        <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
+                <p class=MsoBodyText style='margin-top:.25px'><span lang=FR style='font-size:
 16.0px'>&nbsp;</span></p>
 
-        <p class=MsoTitle><u><span lang=FR style='font-size:20.0px'>BON DE COMMANDE</span></u></p>
+                <p class=MsoTitle><u><span lang=FR style='font-size:20.0px'>BON DE COMMANDE</span></u></p>
 
-        <p class=MsoTitle style='margin-left:72.0px'><u><span lang=FR><span
-                        style='text-decoration:none'>&nbsp;</span></span></u></p>
+                <p class=MsoTitle style='margin-left:72.0px'><u><span lang=FR><span
+                                style='text-decoration:none'>&nbsp;</span></span></u></p>
 
-        <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Type</span></u></b><span lang=FR
-                style='font-size:16.0px'> : <?php echo $typeTicket;?> </span></p>
+                <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Type</span></u></b><span lang=FR
+                        style='font-size:16.0px'> : <?php echo $typeTicket;?> </span></p>
 
-        <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Materiel</span></u></b><span lang=FR
-                style='font-size:16.0px'> : <?php echo $materiel;?> </span></p>
+                <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Materiel</span></u></b><span lang=FR
+                        style='font-size:16.0px'> : <?php echo $materiel;?> </span></p>
 
-        <!-- <p class=MsoBodyText><span lang=FR
+                <!-- <p class=MsoBodyText><span lang=FR
                 style='font-size:16.0px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span></p> -->
 
-        <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Date, heure</span></u></b><b><span lang=FR
-                    style='font-size:16.0px'> : le</span></b><span lang=FR style='font-size:16.0px'>
-                <?php echo $time;?></span></p>
+                <p class=MsoBodyText><b><u><span lang=FR style='font-size:16.0px'>Date, heure</span></u></b><b><span
+                            lang=FR style='font-size:16.0px'> : le</span></b><span lang=FR style='font-size:16.0px'>
+                        <?php echo $time;?></span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:16.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:16.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR
-                style='font-size:16.0px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></p>
+                <p class=MsoBodyText><span lang=FR
+                        style='font-size:16.0px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span></p>
 
-        <p class=MsoBodyText><b><span lang=FR style='font-size:19.0px'>&nbsp;</span></b></p>
+                <p class=MsoBodyText><b><span lang=FR style='font-size:19.0px'>&nbsp;</span></b></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:15.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText style='margin-top:.45px'><span lang=FR style='font-size:
+                <p class=MsoBodyText style='margin-top:.45px'><span lang=FR style='font-size:
 13.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText style='margin-left:5.5px'><span lang=FR>Le<span style='letter-spacing:-.2px'>
-                </span>Responsable<span style='letter-spacing:
+                <p class=MsoBodyText style='margin-left:5.5px'><span lang=FR>Le<span style='letter-spacing:-.2px'>
+                        </span>Responsable<span style='letter-spacing:
 -.2px'> </span>CSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Le<span style='letter-spacing:-.3px'> </span>Responsable<span style='letter-spacing:
+                        Le<span style='letter-spacing:-.3px'> </span>Responsable<span style='letter-spacing:
 -.3px'> </span>du<span style='letter-spacing:-.3px'> </span>service<span style='letter-spacing:-.3px'>
-                </span>demandeur</span></p>
+                        </span>demandeur</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
+                <p class=MsoBodyText><span lang=FR style='font-size:10.0px'>&nbsp;</span></p>
 
-        <p class=MsoBodyText style='margin-top:.45px'>
+                <p class=MsoBodyText style='margin-top:.45px'>
 
-        <table cellpadding=0 cellspacing=0 align=left>
-            <tr>
-                <td width=59 height=0></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><img width=670 height=17 src="tmp2_fichiers/Image1.jpg"></td>
-            </tr>
-        </table>
+                <table cellpadding=0 cellspacing=0 align=left>
+                    <tr>
+                        <td width=59 height=0></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><img width=670 height=17 src="tmp2_fichiers/Image1.jpg"></td>
+                    </tr>
+                </table>
 
-        <br clear=ALL>
+                <br clear=ALL>
         </p>
 
     </div>

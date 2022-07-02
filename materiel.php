@@ -192,10 +192,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tickets.php">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#form-elements" aria-expanded="false"
+                            aria-controls="form-elements">
                             <i class="typcn typcn-ticket menu-icon"></i>
                             <span class="menu-title">Gestion tickets</span>
+                            <i class="menu-arrow"></i>
                         </a>
+                        <div class="collapse" id="form-elements" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="tickets.php">non traité</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tickets-encour.php">Encour de
+                                        traitement</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tickets-refuse.php">refuse</a>
+                                <li class="nav-item"><a class="nav-link" href="tickets-ferme.php">fermé</a>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="materiel.php">
@@ -277,74 +288,74 @@
     <!-- End custom js for this page-->
     <script type="text/javascript" src="./vendor/tabulator/dist/js/tabulator.min.js"></script>
     <script>
-    //custom formatter definition
-    var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
-        return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
-            "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
-            "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
-    };
-    // delete  user
-    var id = "";
+        //custom formatter definition
+        var deleteIcon = function (cell, formatterParams, onRendered) { //plain text value
+            return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
+                "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
+                "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
+        };
+        // delete  user
+        var id = "";
 
-    function deleteUser() {
-        if (confirm("vous etes sur ?")) {
-            console.log("id deleted : " + id)
-        } else {
-            console.log("Declined")
+        function deleteUser() {
+            if (confirm("vous etes sur ?")) {
+                console.log("id deleted : " + id)
+            } else {
+                console.log("Declined")
+            }
         }
-    }
-    //create Tabulator on DOM element with id "example-table"
-    var table = new Tabulator("#example-table", {
-        ajaxURL: "src/materiel.php", //ajax URL
-        height: 633,
-        layout: "fitColumns", //fit columns to width of table (optional)
-        columns: [ //Define Table Columns
-            {
-                title: "idUser",
-                field: "idUser",
-                width: 150
-            },
-            {
-                title: "idFournisseur",
-                field: "idFournisseur",
-                width: 150
-            },
-            {
-                title: "libelle",
-                field: "libelle",
-                width: 150
-            },
-            {
-                title: "Numéro de série",
-                field: "nSerie",
-                width: 150
-            },
-            {
-                title: "date debut garantie",
-                field: "dateDebutGarantie",
-                width: 200,
-                sorter: "date"
-            },
-            {
-                title: "date fin garantie",
-                field: "dateFinGarantie",
-                width: 200,
-                sorter: "date"
-            },
-            {
-                title: "Action",
-                headerHozAlign: "center",
-                formatter: deleteIcon,
-                hozAlign: "center",
-                cellClick: function(e, cell) {
-                    //e - the click event object
-                    //cell - cell component
-                    id = cell.getData().id;
-                    console.log("id :" + id);
+        //create Tabulator on DOM element with id "example-table"
+        var table = new Tabulator("#example-table", {
+            ajaxURL: "src/materiel.php", //ajax URL
+            height: 633,
+            layout: "fitColumns", //fit columns to width of table (optional)
+            columns: [ //Define Table Columns
+                {
+                    title: "idUser",
+                    field: "idUser",
+                    width: 150
                 },
-            },
-        ],
-    });
+                {
+                    title: "idFournisseur",
+                    field: "idFournisseur",
+                    width: 150
+                },
+                {
+                    title: "libelle",
+                    field: "libelle",
+                    width: 150
+                },
+                {
+                    title: "Numéro de série",
+                    field: "nSerie",
+                    width: 150
+                },
+                {
+                    title: "date debut garantie",
+                    field: "dateDebutGarantie",
+                    width: 200,
+                    sorter: "date"
+                },
+                {
+                    title: "date fin garantie",
+                    field: "dateFinGarantie",
+                    width: 200,
+                    sorter: "date"
+                },
+                {
+                    title: "Action",
+                    headerHozAlign: "center",
+                    formatter: deleteIcon,
+                    hozAlign: "center",
+                    cellClick: function (e, cell) {
+                        //e - the click event object
+                        //cell - cell component
+                        id = cell.getData().id;
+                        console.log("id :" + id);
+                    },
+                },
+            ],
+        });
     </script>
 </body>
 

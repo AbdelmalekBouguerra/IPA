@@ -1,3 +1,20 @@
+<?php
+include "./config/config.php";
+// accept a ticket ==================================
+if(isset($_POST['idTicket'])) {
+$idTicket = trim($_POST['idTicket']);
+try {
+$query = "UPDATE ticket SET status ='onWork' WHERE id=:id;";
+$stmt = $connection->prepare($query);
+$stmt->bindParam('id', $idTicket, PDO::PARAM_INT);
+$stmt->execute();
+} catch (PDOException $e) {
+echo "Error : ".$e->getMessage();
+}
+}
+// ===================================================
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -265,10 +282,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tickets.php">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#form-elements" aria-expanded="false"
+                            aria-controls="form-elements">
                             <i class="typcn typcn-ticket menu-icon"></i>
                             <span class="menu-title">Gestion tickets</span>
+                            <i class="menu-arrow"></i>
                         </a>
+                        <div class="collapse" id="form-elements" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="tickets.php">Non traité</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tickets-encour.php">Encour de
+                                        traitement</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tickets-ferme.php">fermé ou
+                                        refuse</a>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="materiel.php">
@@ -347,23 +375,38 @@
     <script src="admin/js/dashboard.js"></script>
     <!-- End custom js for this page-->
     <script type="text/javascript" src="./vendor/tabulator/dist/js/tabulator.min.js"></script>
+
+
     <script>
     //custom formatter definition
-    var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
-        return "<button type='button' class='btn btn-inverse-info btn-fw' onClick=\"confirmAccepte();\"> Accepter </button>" +
-            "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
-            "class = 'btn btn-inverse-danger btn-fw'> Refuser </button>";
+    var deleteIcon = function(cell, formatterParams, onRendered) {
+        //plain text value
+        id = cell.getData().id;
+        return ' <form action="" method="POST" id="acceptTicket' + id + '">' +
+            '<input type="hidden" name="idTicket" value="' + id + '">' +
+            '<button type=\'button\' class=\'btn btn-inverse-info btn-fw\' onClick=\'confirmAccepte(this);\'> Accepter </button>' +
+            '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
+            'class = \'btn btn-inverse-danger btn-fw\'> Refuser </button>' +
+            '</form>';
     };
     // delete  user
     var id = "";
 
-    function confirmAccepte() {
+    function confirmAccepte(e) {
         if (confirm("vous etes sur ?")) {
-            console.log("id deleted : " + id)
+            document.getElementById(e.parentNode.id).submit();
         } else {
-            console.log("Declined")
+            return false;
         }
     }
+
+    // function refuseTicket() {
+    //     if (confirm("vous etes sur ?")) {
+    //         document.getElementById("refuseTicket").submit();
+    //     } else {
+    //         return false;
+    //     }
+    // }
     //create Tabulator on DOM element with id "example-table"
     var table = new Tabulator("#example-table", {
         ajaxURL: "src/tickets-admin.php", //ajax URL
@@ -391,6 +434,11 @@
                 width: 300
             },
             {
+                title: "Statu",
+                field: "status",
+                width: 100,
+            },
+            {
                 title: "type de Ticket",
                 field: "typeTicket",
                 width: 150
@@ -405,6 +453,9 @@
                     //cell - cell component
                     id = cell.getData().id;
                     console.log("id :" + id);
+                    // console.log(document.getElementById("idMotif"));
+                    document.getElementById("idMotif").value = id;
+                    console.log("add to idMotif");
                 },
             },
         ],

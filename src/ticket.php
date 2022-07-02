@@ -52,6 +52,7 @@
             $stmt->bindParam('desc', $desc, PDO::PARAM_STR);
             $stmt->bindValue('id', $_SESSION['sess_user_id'], PDO::PARAM_INT);
             $stmt->execute();
+            header("Refresh:0");
          } catch (PDOException $e) {
             echo "Error : ".$e->getMessage();
          }

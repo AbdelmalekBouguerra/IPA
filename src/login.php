@@ -7,7 +7,7 @@
    $password = trim($_POST['password']);
    if($username != "" && $password != "") {
       try {
-         $query = "select * from `users` where `userName`=:username and `userPassword`=:password";
+         $query = "select * from `users`,`service` where `userName`=:username and `userPassword`=:password and users.idService = service.idService;";
          $stmt = $connection->prepare($query);
          $stmt->bindParam('username', $username, PDO::PARAM_STR);
          $stmt->bindValue('password', $password, PDO::PARAM_STR);
@@ -18,6 +18,10 @@
          /******************** Your code ***********************/
          $_SESSION['sess_user_id']   = $row['id'];
          $_SESSION['sess_user_name'] = $row['userName'];
+         $_SESSION['nom'] = $row['nom'];
+         $_SESSION['prenom'] = $row['prenom'];
+         $_SESSION['libelleService'] = $row['libelleService'];
+
          header('location:home.php');
          } else {
             $msg = "Invalid username and password!";

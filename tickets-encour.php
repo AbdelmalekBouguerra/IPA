@@ -1,3 +1,19 @@
+<?php
+include "./config/config.php";
+// accept a ticket ==================================
+if(isset($_POST['idTicket'])) {
+$idTicket = trim($_POST['idTicket']);
+try {
+$query = "UPDATE ticket SET status ='fermer' WHERE id=:id;";
+$stmt = $connection->prepare($query);
+$stmt->bindParam('id', $idTicket, PDO::PARAM_INT);
+$stmt->execute();
+} catch (PDOException $e) {
+echo "Error : ".$e->getMessage();
+}
+}
+// ===================================================
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +22,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>IPA Admin Panel - Fournisseur</title>
+    <title>IPA Admin Panel - Ticket en cour</title>
     <!-- base:css -->
     <link rel="stylesheet" href="admin/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="admin/vendors/css/vendor.bundle.base.css">
@@ -28,9 +44,9 @@
             <div class="navbar-brand-wrapper d-flex justify-content-center">
                 <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
                     <a class="navbar-brand brand-logo" href="admin.html"><img src="./img/logo-white-ipa.png" alt="logo"
-                            style=" width: 50px;" alt="logo" /></a>
+                            style=" width: 50px;" /></a>
                     <a class="navbar-brand brand-logo-mini" href="admin.html"><img src="./img/logo-white-ipa.png"
-                            alt="logo" style=" width: 50px;" alt="logo" /></a>
+                            alt="logo" style=" width: 50px;" /></a></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
                         data-toggle="minimize">
                         <span class="typcn typcn-th-menu"></span>
@@ -172,6 +188,79 @@
                         </div>
                     </div>
                     <!-- To do section tab ends -->
+                    <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+                        <div class="d-flex align-items-center justify-content-between border-bottom">
+                            <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+                            <small
+                                class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See
+                                All</small>
+                        </div>
+                        <ul class="chat-list">
+                            <li class="list active">
+                                <div class="profile"><img src="admin/images/faces/face1.jpg" alt="image"><span
+                                        class="online"></span>
+                                </div>
+                                <div class="info">
+                                    <p>Thomas Douglas</p>
+                                    <p>Available</p>
+                                </div>
+                                <small class="text-muted my-auto">19 min</small>
+                            </li>
+                            <li class="list">
+                                <div class="profile"><img src="admin/images/faces/face2.jpg" alt="image"><span
+                                        class="offline"></span>
+                                </div>
+                                <div class="info">
+                                    <div class="wrapper d-flex">
+                                        <p>Catherine</p>
+                                    </div>
+                                    <p>Away</p>
+                                </div>
+                                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
+                                <small class="text-muted my-auto">23 min</small>
+                            </li>
+                            <li class="list">
+                                <div class="profile"><img src="admin/images/faces/face3.jpg" alt="image"><span
+                                        class="online"></span>
+                                </div>
+                                <div class="info">
+                                    <p>Daniel Russell</p>
+                                    <p>Available</p>
+                                </div>
+                                <small class="text-muted my-auto">14 min</small>
+                            </li>
+                            <li class="list">
+                                <div class="profile"><img src="admin/images/faces/face4.jpg" alt="image"><span
+                                        class="offline"></span>
+                                </div>
+                                <div class="info">
+                                    <p>James Richardson</p>
+                                    <p>Away</p>
+                                </div>
+                                <small class="text-muted my-auto">2 min</small>
+                            </li>
+                            <li class="list">
+                                <div class="profile"><img src="admin/images/faces/face5.jpg" alt="image"><span
+                                        class="online"></span>
+                                </div>
+                                <div class="info">
+                                    <p>Madeline Kennedy</p>
+                                    <p>Available</p>
+                                </div>
+                                <small class="text-muted my-auto">5 min</small>
+                            </li>
+                            <li class="list">
+                                <div class="profile"><img src="admin/images/faces/face6.jpg" alt="image"><span
+                                        class="online"></span>
+                                </div>
+                                <div class="info">
+                                    <p>Sarah Graves</p>
+                                    <p>Available</p>
+                                </div>
+                                <small class="text-muted my-auto">47 min</small>
+                            </li>
+                        </ul>
+                    </div>
                     <!-- chat tab ends -->
                 </div>
             </div>
@@ -205,6 +294,7 @@
                                         traitement</a></li>
                                 <li class="nav-item"><a class="nav-link" href="tickets-refuse.php">refuse</a>
                                 <li class="nav-item"><a class="nav-link" href="tickets-ferme.php">fermé</a>
+
                             </ul>
                         </div>
                     </li>
@@ -241,12 +331,9 @@
                 </ul>
             </nav>
             <!-- partial -->
-            <?php include './partials/model-add-fou.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
-                        <button type='button' data-toggle='modal' data-target='#add-fournisseur'
-                            class='btn mb-3 ml-3 btn-inverse-success btn-fw'> Ajoute Fournisseur</button>
                         <div id="example-table" style="width: 1610px;"></div> <!-- here the table -->
                     </div>
                 </div>
@@ -256,7 +343,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
+                                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright
+                                    ©
                                     2022 Assia Boutakhedmit rights reserved.</span>
                             </div>
                         </div>
@@ -287,63 +375,88 @@
     <script src="admin/js/dashboard.js"></script>
     <!-- End custom js for this page-->
     <script type="text/javascript" src="./vendor/tabulator/dist/js/tabulator.min.js"></script>
-    <script>
-        //custom formatter definition
-        var deleteIcon = function (cell, formatterParams, onRendered) { //plain text value
-            return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
-                "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
-                "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
-        };
-        // delete  user
-        var id = "";
 
-        function deleteUser() {
-            if (confirm("vous etes sur ?")) {
-                console.log("id deleted : " + id)
-            } else {
-                console.log("Declined")
-            }
+
+    <script>
+    var id = "";
+
+    //custom formatter definition
+    var deleteIcon = function(cell, formatterParams, onRendered) {
+        //plain text value
+        var id2 = cell.getData().id;
+        console.log("id clicked : ", id2);
+        return ' <form action="" method="POST" id="fermerTicket' + id2 + '">' +
+            '<input type="hidden" name="idTicket" value="' + id2 + '">' +
+            '<button type=\'button\' class=\'btn btn-inverse-info btn-fw\' onClick=\'fermerTicket(this);\'>Fermé</button>' +
+            '</form>';
+    };
+    // delete  user
+
+    function fermerTicket(e) {
+        if (confirm("vous etes sur ?")) {
+            document.getElementById(e.parentNode.id).submit();
+        } else {
+            return false;
         }
-        //create Tabulator on DOM element with id "example-table"
-        var table = new Tabulator("#example-table", {
-            ajaxURL: "src/fournisseur.php", //ajax URL
-            height: 633,
-            layout: "fitColumns", //fit columns to width of table (optional)
-            columns: [ //Define Table Columns
-                {
-                    title: "id",
-                    field: "id",
-                    width: 150
+    }
+
+    // function refuseTicket() {
+    //     if (confirm("vous etes sur ?")) {
+    //         document.getElementById("refuseTicket").submit();
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    //create Tabulator on DOM element with id "example-table"
+    var table = new Tabulator("#example-table", {
+        ajaxURL: "src/tickets-encour.php", //ajax URL
+        height: 633,
+        layout: "fitColumns", //fit columns to width of table (optional)
+        columns: [ //Define Table Columns
+            {
+                title: "id Ticket",
+                field: "id",
+                width: 150
+            },
+            {
+                title: "Nom propriétaire",
+                field: "nom",
+                width: 150
+            },
+            {
+                title: "Prenom propriétaire",
+                field: "prenom",
+                width: 150
+            },
+            {
+                title: "description Ticket",
+                field: "descriptionTicket",
+                width: 300
+            },
+            {
+                title: "Statu",
+                field: "status",
+                width: 100,
+            },
+            {
+                title: "type de Ticket",
+                field: "typeTicket",
+                width: 150
+            },
+            {
+                title: "Action",
+                headerHozAlign: "center",
+                formatter: deleteIcon,
+                hozAlign: "center",
+                cellClick: function(e, cell) {
+                    //e - the click event object
+                    //cell - cell component
+                    id = cell.getData().id;
+                    // console.log("id :" + id);
                 },
-                {
-                    title: "Libellé",
-                    field: "libelle",
-                    width: 150
-                },
-                {
-                    title: "Adresse",
-                    field: "adress",
-                    width: 500
-                },
-                {
-                    title: "Numéro de telephone",
-                    field: "num_tele",
-                    width: 150
-                },
-                {
-                    title: "Action",
-                    headerHozAlign: "center",
-                    formatter: deleteIcon,
-                    hozAlign: "center",
-                    cellClick: function (e, cell) {
-                        //e - the click event object
-                        //cell - cell component
-                        id = cell.getData().id;
-                        console.log("id :" + id);
-                    },
-                },
-            ],
-        });
+            },
+        ],
+    });
     </script>
 </body>
 

@@ -1,40 +1,42 @@
+<?php
+// accept a ticket ==================================
+if(isset($_POST['motif'])) {
+    echo '<script>console.log("am here");</script>';
+$motif = trim($_POST['motif']);
+$idMotif = trim($_POST['idMotif']);
+
+try {
+$query = "UPDATE ticket SET motifRefus=:motif, status='refuse' WHERE id=:id;";
+$stmt = $connection->prepare($query);
+$stmt->bindParam('id', $idMotif, PDO::PARAM_INT);
+$stmt->bindParam('motif', $motif, PDO::PARAM_STR);
+$stmt->execute();
+} catch (PDOException $e) {
+echo "Error : ".$e->getMessage();
+}
+}
+// ===================================================
+
+?>
+
+
 <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog mw-100 w-75 modal-dialog-centered" role="document">
         <div class="modal-content rounded-0">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Default form</h4>
-                    <p class="card-description">
-                        Basic form layout
-                    </p>
-                    <form class="forms-sample">
+                    <h4 class="card-title">Motif de rejet</h4>
+                    <form class="forms-sample" method="POST">
+                        <input type="hidden" name="idMotif" id="idMotif">
                         <div class="form-group">
-                            <label for="exampleInputUsername1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                            <label for="1">Écrivez le motif du refus</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea3" name="motif" rows="7"
+                                maxlength="5000"
+                                placeholder="Entrez votre explication ici , max 5000 caractères"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputConfirmPassword1"
-                                placeholder="Password">
-                        </div>
-                        <div class="form-check form-check-flat form-check-primary">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input">
-                                Remember me
-                                <i class="input-helper"></i></label>
-                        </div>
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button class="btn btn-light">Cancel</button>
+                        <input type="submit" class="btn btn-success mr-2">
+                        <button class="btn btn-danger" onclick="window.location.reload(true)">Cancel</button>
                     </form>
                 </div>
             </div>
