@@ -293,8 +293,8 @@ echo "Error : ".$e->getMessage();
                                 <li class="nav-item"><a class="nav-link" href="tickets.php">Non traité</a></li>
                                 <li class="nav-item"><a class="nav-link" href="tickets-encour.php">Encour de
                                         traitement</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tickets-ferme.php">fermé ou
-                                        refuse</a>
+                                <li class="nav-item"><a class="nav-link" href="tickets-refuse.php">refuse</a>
+                                <li class="nav-item"><a class="nav-link" href="tickets-ferme.php">fermé</a>
                             </ul>
                         </div>
                     </li>
