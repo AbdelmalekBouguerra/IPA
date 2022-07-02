@@ -275,28 +275,24 @@ echo "Error : ".$e->getMessage();
                         </a>
                     </li>
                     <li class="nav-item">
+                        <?php if ($_SESSION["userRole"] == 'superAdmin') {?>
+                    <li class="nav-item">
                         <a class="nav-link" href="acounts.php">
                             <i class="typcn typcn-user-outline menu-icon"></i>
                             <span class="menu-title">Gestion comptes</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#form-elements" aria-expanded="false"
-                            aria-controls="form-elements">
-                            <i class="typcn typcn-ticket menu-icon"></i>
-                            <span class="menu-title">Gestion tickets</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-elements" style="">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="tickets.php">non traité</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tickets-encour.php">Encour de
-                                        traitement</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tickets-refuse.php">refuse</a>
-                                <li class="nav-item"><a class="nav-link" href="tickets-ferme.php">fermé</a>
+                    <?php }?>
+                    <div class="collapse" id="form-elements" style="">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"><a class="nav-link" href="tickets.php">non traité</a></li>
+                            <li class="nav-item"><a class="nav-link" href="tickets-encour.php">Encour de
+                                    traitement</a></li>
+                            <li class="nav-item"><a class="nav-link" href="tickets-refuse.php">refuse</a>
+                            <li class="nav-item"><a class="nav-link" href="tickets-ferme.php">fermé</a>
 
-                            </ul>
-                        </div>
+                        </ul>
+                    </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="materiel.php">

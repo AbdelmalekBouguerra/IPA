@@ -258,12 +258,14 @@
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
+                    <?php if ($_SESSION["userRole"] == 'superAdmin') {?>
                     <li class="nav-item">
                         <a class="nav-link" href="acounts.php">
                             <i class="typcn typcn-user-outline menu-icon"></i>
                             <span class="menu-title">Gestion comptes</span>
                         </a>
                     </li>
+                    <?php }?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#form-elements" aria-expanded="false"
                             aria-controls="form-elements">
@@ -362,77 +364,77 @@
 
 
     <script>
-    //custom formatter definition
-    var deleteIcon = function(cell, formatterParams, onRendered) {
-        //plain text value
-        id = cell.getData().id;
-        return ' <form action="" method="POST" id="fermerTicket">' +
-            '<input type="hidden" name="idTicket" value="' + id + '">' +
-            '<button type=\'button\' class=\'btn btn-inverse-info btn-fw\' onClick=\'fermerTicket();\'>Accepter</button>' +
-            '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
-            'class = \'btn btn-inverse-danger btn-fw\'> Refuser </button>' +
-            '</form>';
-    };
-    // delete  user
-    var id = "";
+        //custom formatter definition
+        var deleteIcon = function (cell, formatterParams, onRendered) {
+            //plain text value
+            id = cell.getData().id;
+            return ' <form action="" method="POST" id="fermerTicket">' +
+                '<input type="hidden" name="idTicket" value="' + id + '">' +
+                '<button type=\'button\' class=\'btn btn-inverse-info btn-fw\' onClick=\'fermerTicket();\'>Accepter</button>' +
+                '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
+                'class = \'btn btn-inverse-danger btn-fw\'> Refuser </button>' +
+                '</form>';
+        };
+        // delete  user
+        var id = "";
 
-    function fermerTicket() {
-        if (confirm("vous etes sur ?")) {
-            document.getElementById("fermerTicket").submit();
-        } else {
-            return false;
-        }
-    }
-
-    // function refuseTicket() {
-    //     if (confirm("vous etes sur ?")) {
-    //         document.getElementById("refuseTicket").submit();
-    //     } else {
-    //         return false;
-    //     }
-    // }
-    //create Tabulator on DOM element with id "example-table"
-    var table = new Tabulator("#example-table", {
-        ajaxURL: "src/tickets-refuse.php", //ajax URL
-        height: 633,
-        layout: "fitColumns", //fit columns to width of table (optional)
-        columns: [ //Define Table Columns
-            {
-                title: "id Ticket",
-                field: "id",
-                width: 150
-            },
-            {
-                title: "Nom propriétaire",
-                field: "nom",
-                width: 150
-            },
-            {
-                title: "Prenom propriétaire",
-                field: "prenom",
-                width: 150
-            },
-            {
-                title: "description Ticket",
-                field: "descriptionTicket",
-                width: 300
-            },
-            {
-                title: "Statu",
-                field: "status",
-                width: 100,
-            },
-            {
-                title: "type de Ticket",
-                field: "typeTicket",
-                width: 150
-            },
-            {
-                title: "Motif de rejet",
-                field: "motifRefus",
+        function fermerTicket() {
+            if (confirm("vous etes sur ?")) {
+                document.getElementById("fermerTicket").submit();
+            } else {
+                return false;
             }
-        ],
-    });
+        }
+
+        // function refuseTicket() {
+        //     if (confirm("vous etes sur ?")) {
+        //         document.getElementById("refuseTicket").submit();
+        //     } else {
+        //         return false;
+        //     }
+        // }
+        //create Tabulator on DOM element with id "example-table"
+        var table = new Tabulator("#example-table", {
+            ajaxURL: "src/tickets-refuse.php", //ajax URL
+            height: 633,
+            layout: "fitColumns", //fit columns to width of table (optional)
+            columns: [ //Define Table Columns
+                {
+                    title: "id Ticket",
+                    field: "id",
+                    width: 150
+                },
+                {
+                    title: "Nom propriétaire",
+                    field: "nom",
+                    width: 150
+                },
+                {
+                    title: "Prenom propriétaire",
+                    field: "prenom",
+                    width: 150
+                },
+                {
+                    title: "description Ticket",
+                    field: "descriptionTicket",
+                    width: 300
+                },
+                {
+                    title: "Statu",
+                    field: "status",
+                    width: 100,
+                },
+                {
+                    title: "type de Ticket",
+                    field: "typeTicket",
+                    width: 150
+                },
+                {
+                    title: "Motif de rejet",
+                    field: "motifRefus",
+                }
+            ],
+        });
     </script>
 </body>
 

@@ -131,8 +131,8 @@
                                 <label for="exampleSelect">Type de commande</label>
                                 <select name="type-ticket" onchange="yesnoCheck(this);" class="form-control"
                                     id="exampleSelect">
-                                    <option value="Achat matériel" selected>Achat matériel</option>
-                                    <option value="Remplacement de piece">Remplacement de piece</option>
+                                    <option value="Achat matériel">Achat matériel</option>
+                                    <option value="Remplacement de piece" selected>Remplacement de piece</option>
                                     <option value="Reparation de matériel">Reparation de matériel</option>
                                 </select>
                             </div>
@@ -140,9 +140,9 @@
                                 <label for="materiel">Matériel</label>
                                 <select id="materiel" class="form-control chzn-select " multiple="true"
                                     name="materiel[]">
-                                    <option value="pc">pc</option>
-                                    <option value="imprimant">imprimant</option>
-                                    <option value="scaner">scaner</option>
+                                    <?php foreach ($materiel as $value) {
+                                       echo '<option value="'. $value['libelle'] .'">'. $value['libelle'] .'</option>';
+                                    }?>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -166,10 +166,10 @@
 <!-- showing matériel select if chose certien option -->
 <script>
 function yesnoCheck(that) {
-    if (that.value == "RM" || that.value == "RP") {
-        document.getElementById("ifYes").disabled = false;
+    if (that.value == "Achat matériel") {
+        $('#materiel').prop('disabled', true).trigger("chosen:updated");
     } else {
-        document.getElementById("ifYes").disabled = true;
+        $('#materiel').prop('disabled', false).trigger("chosen:updated");
     }
 }
 </script>

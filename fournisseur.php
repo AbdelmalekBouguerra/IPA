@@ -185,12 +185,14 @@
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
+                    <?php if ($_SESSION["userRole"] == 'superAdmin') {?>
                     <li class="nav-item">
                         <a class="nav-link" href="acounts.php">
                             <i class="typcn typcn-user-outline menu-icon"></i>
                             <span class="menu-title">Gestion comptes</span>
                         </a>
                     </li>
+                    <?php }?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#form-elements" aria-expanded="false"
                             aria-controls="form-elements">

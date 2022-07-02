@@ -49,7 +49,7 @@ if(isset($_POST['idDeletedTicket'])) {
     <div class="click_capture"></div>
 
     <div class="body_wrapper">
-        <?php include "partials/navbar.html" ?>
+        <?php include "partials/navbar.php" ?>
 
         <section class="breadcrumb_area">
             <h2 class="container" style="font-size: 50px;padding-left: 80px;margin-left: 400px;">

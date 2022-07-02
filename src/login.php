@@ -20,6 +20,7 @@
          $_SESSION['sess_user_name'] = $row['userName'];
          $_SESSION['nom'] = $row['nom'];
          $_SESSION['prenom'] = $row['prenom'];
+         $_SESSION['userRole'] = $row['userRole'];
          $_SESSION['libelleService'] = $row['libelleService'];
 
          header('location:home.php');

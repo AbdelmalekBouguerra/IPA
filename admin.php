@@ -255,12 +255,22 @@
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
+                    <?php if ($_SESSION["userRole"] == 'superAdmin') {?>
                     <li class="nav-item">
                         <a class="nav-link" href="acounts.php">
                             <i class="typcn typcn-user-outline menu-icon"></i>
                             <span class="menu-title">Gestion comptes</span>
                         </a>
                     </li>
+                    <?php }?>
+                    <?php if ($_SESSION["userRole"] == 'directeur') {?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tickets.php">
+                            <i class="typcn typcn-ticket menu-icon"></i>
+                            <span class="menu-title">Gestion tickets</span>
+                        </a>
+                    </li>
+                    <?php }else {?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#form-elements" aria-expanded="false"
                             aria-controls="form-elements">
@@ -308,6 +318,7 @@
                             <span class="menu-title">Gestion Direction</span>
                         </a>
                     </li>
+                    <?php }?>
                 </ul>
             </nav>
             <!-- partial -->

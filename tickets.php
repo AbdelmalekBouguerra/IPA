@@ -1,12 +1,20 @@
 <?php
+session_start();
 include "./config/config.php";
 // accept a ticket ==================================
 if(isset($_POST['idTicket'])) {
 $idTicket = trim($_POST['idTicket']);
 try {
-$query = "UPDATE ticket SET status ='onWork' WHERE id=:id;";
+    // if directeur put valide else put onWork
+if ($_SESSION["userRole"] == 'directeur'){
+    $val = 'valide';
+} else{
+    $val = 'onWork';
+}
+$query = "UPDATE ticket SET status =:val WHERE id=:id;";
 $stmt = $connection->prepare($query);
 $stmt->bindParam('id', $idTicket, PDO::PARAM_INT);
+$stmt->bindParam('val', $val, PDO::PARAM_STR);
 $stmt->execute();
 } catch (PDOException $e) {
 echo "Error : ".$e->getMessage();
@@ -59,8 +67,7 @@ echo "Error : ".$e->getMessage();
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="img/profile.jpg" alt="profile" />
-                            <span
-                                class="nav-profile-name"><?php session_start(); echo $_SESSION['sess_user_name'] ?></span>
+                            <span class="nav-profile-name"><?php  echo $_SESSION['sess_user_name'] ?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
@@ -275,12 +282,22 @@ echo "Error : ".$e->getMessage();
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
+                    <?php if ($_SESSION["userRole"] == 'superAdmin') {?>
                     <li class="nav-item">
                         <a class="nav-link" href="acounts.php">
                             <i class="typcn typcn-user-outline menu-icon"></i>
                             <span class="menu-title">Gestion comptes</span>
                         </a>
                     </li>
+                    <?php }?>
+                    <?php if ($_SESSION["userRole"] == 'directeur') {?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tickets.php">
+                            <i class="typcn typcn-ticket menu-icon"></i>
+                            <span class="menu-title">Gestion tickets</span>
+                        </a>
+                    </li>
+                    <?php }else {?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-toggle="collapse" href="#form-elements" aria-expanded="false"
                             aria-controls="form-elements">
@@ -290,7 +307,7 @@ echo "Error : ".$e->getMessage();
                         </a>
                         <div class="collapse" id="form-elements" style="">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="tickets.php">Non traité</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tickets.php">non traité</a></li>
                                 <li class="nav-item"><a class="nav-link" href="tickets-encour.php">Encour de
                                         traitement</a></li>
                                 <li class="nav-item"><a class="nav-link" href="tickets-refuse.php">refuse</a>
@@ -328,6 +345,7 @@ echo "Error : ".$e->getMessage();
                             <span class="menu-title">Gestion Direction</span>
                         </a>
                     </li>
+                    <?php }?>
                 </ul>
             </nav>
             <!-- partial -->
