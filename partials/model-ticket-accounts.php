@@ -35,7 +35,7 @@ echo "Error : ".$e->getMessage();
                                 maxlength="5000"
                                 placeholder="Entrez votre explication ici , max 5000 caractères"></textarea>
                         </div>
-                        <input type="submit" class="btn btn-success mr-2">
+                        <input type="submit" class="btn btn-success mr-2" value="Envoyer">
                         <button class="btn btn-danger" onclick="window.location.reload(true)">Cancel</button>
                     </form>
                 </div>

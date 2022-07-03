@@ -18,6 +18,9 @@ $fournitures = str_replace(array("\r\n", "\r", "\n"), "/", $fournitures);
 
 $idTicket = trim($_POST['idTicket']);
 $materiel = trim($_POST['materiel']);
+$nom = trim($_POST['nom']);
+$prenom = trim($_POST['prenom']);
+$typeTicket = trim($_POST['typeTicket']);
 
 }
 ?>
@@ -28,7 +31,7 @@ $materiel = trim($_POST['materiel']);
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
     <meta name=Generator content="Microsoft Word 15 (filtered)">
-    <title>Nouvel entete.docx</title>
+    <title>ficher d'intervention</title>
     <style>
     /* Font Definitions */
     @font-face {
@@ -152,7 +155,9 @@ $materiel = trim($_POST['materiel']);
         <p class=MsoBodyText><b><span lang=FR style='font-size:19.0pt'>&nbsp;</span></b></p>
 
         <p class=MsoBodyText style='margin-top:16.6pt;margin-right:0cm;margin-bottom:
-0cm;margin-left:5.5pt;margin-bottom:.0001pt'><span lang=FR>Suite à votre demande de …. au… ,relative à la réparation de
+0cm;margin-left:5.5pt;margin-bottom:.0001pt'><span lang=FR>Suite à votre demande de "<?php echo $typeTicket ?>"
+                au
+                "<?php echo $nom . " " .$prenom ?>",relative à la réparation de
                 "<?php echo $materiel;?>" nous avons procédé à :
             </span></p>
 
@@ -187,9 +192,6 @@ $materiel = trim($_POST['materiel']);
 
         <p class=MsoBodyText><span lang=FR style='font-size:15.0pt'>&nbsp;</span></p>
 
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0pt'>&nbsp;</span></p>
-
-        <p class=MsoBodyText><span lang=FR style='font-size:15.0pt'>&nbsp;</span></p>
 
         <p class=MsoBodyText style='margin-top:.45pt'><span lang=FR style='font-size:
 13.0pt'>&nbsp;</span></p>

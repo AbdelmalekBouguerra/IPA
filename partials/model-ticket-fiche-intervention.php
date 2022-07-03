@@ -8,7 +8,9 @@
                     <form action="ficheIntervention.php" class="forms-sample" method="POST">
                         <input type="hidden" name="idTicket" id="idTicket">
                         <input type="hidden" name="materiel" id="materiel">
-
+                        <input type="hidden" name="nom" id="nom">
+                        <input type="hidden" name="prenom" id="prenom">
+                        <input type="hidden" name="typeTicket" id="typeTicket">
                         <div class="form-group">
                             <label for="1">Donnez les Prestations</label>
                             <textarea class="form-control" id="exampleFormControlTextarea3" name="prestations" rows="7"

@@ -471,7 +471,7 @@ echo "Error : ".$e->getMessage();
                     //cell - cell component
                     id = cell.getData().id;
                     console.log("id :" + id);
-                    // console.log(document.getElementById("idMotif"));
+                    console.log(document.getElementById("idMotif"));
                     document.getElementById("idMotif").value = id;
                     console.log("add to idMotif");
                 },
