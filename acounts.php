@@ -1,3 +1,22 @@
+<?php
+include "./config/config.php";
+// delete account ==================================
+if(isset($_POST['idDeleteAccount'])) {
+    $idDeleteAccount = trim($_POST['idDeleteAccount']);
+    echo "<script>
+        console.log('i enterd heeeeres');
+    </script>";
+    try {
+        $query = "DELETE FROM `users` WHERE id=:id;";
+        $stmt = $connection->prepare($query);
+        $stmt->bindParam('id', $idDeleteAccount, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Error : ".$e->getMessage();
+    }
+}
+// ===================================================
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -246,9 +265,12 @@
                 <div class="content-wrapper">
                     <div class="row">
                         <button type='button' data-toggle='modal' data-target='#add-account'
-                            class='btn mb-3 ml-3 btn-inverse-success btn-fw'> Ajoute un
+                            class='btn mb-3 ml-3 btn-inverse-success btn-fw' id="addAcc"> Ajoute un
                             utilsateur</button>
                         <div id="example-table" style="width: 1610px;"></div> <!-- here the table -->
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <h3 class="text-danger"><?php echo $msg_error?></h1>
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
@@ -269,11 +291,11 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+
     <!-- container-scroller -->
     <?php include 'partials/model-ticket-accounts.php'; ?>
     <!-- base:js -->
-    <script src="admin/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
+    <script src=" admin/vendors/js/vendor.bundle.base.js"> </script> <!-- endinject -->
     <!-- Plugin js for this page-->
     <script src="admin/vendors/chart.js/Chart.min.js"></script>
     <!-- End plugin js for this page-->
@@ -291,19 +313,72 @@
     <script>
     //custom formatter definition
     var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
-        return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
-            "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
-            "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
+
+        var id2 = cell.getData().id;
+        var row = cell.getData();
+        return '<form method="POST" id="deleteAccount' + id2 + '">' +
+            '<input type="hidden" name="idDeleteAccount" value="' + id2 + '">' +
+            '<button type=\'button\' class=\'btn btn-inverse-danger btn-fw mr-3\' onClick="deleteAccount(this);"> Supprimer' +
+            '</button>' +
+            '<button type=\'button\' data-toggle=\'modal\' data-target=\'#add-account\' onClick=\'editAccount(this,"' +
+            id2 + '")\';' +
+            'style="margin-left: 10px;" class=\'btn btn-inverse-info btn-fw\'> Modifier </button>' +
+            '</form>';
+
     };
+
+    document.getElementById("addAcc").addEventListener("click", e => {
+        document.getElementById("addingAccountForm").reset();
+        var element = document.getElementById("idEditAccount");
+
+        //If it isn't "undefined" and it isn't "null", then it exists.
+        if (typeof(element) != 'undefined' && element != null) {
+            element.parentNode.removeChild(element);
+        }
+    })
     // delete  user
     var id = "";
 
-    function deleteUser() {
-        if (confirm("vous etes sur ?")) {
-            console.log("id deleted : " + id)
+    function deleteAccount(e) {
+        if (confirm("Vous etes sur ?")) {
+            // console.log("parent id :" + e.parentNode.id);
+
+            document.getElementById(e.parentNode.id).submit();
         } else {
-            console.log("Declined")
+            return false;
         }
+    }
+
+    function editAccount(e, id) {
+        let data = table.getRow(id).getData();
+        document.getElementById('nom').value = data.nom;
+        document.getElementById('prenom').value = data.prenom;
+        document.getElementById('Fonction').value = data.fonction;
+        document.getElementById('IdService').value = data.idService;
+        document.getElementById('matricule').value = data.matricule;
+        document.getElementById('email').value = data.email;
+        document.getElementById('userName').value = data.userName;
+        document.getElementById('userRole').value = data.userRole;
+        document.getElementById('userPassword').value = data.userPassword;
+        document.getElementById('confirmPassword').value = data.userPassword;
+
+        let form = document.getElementById("addingAccountForm");
+
+        // creating input:hidden
+        // check if exist old hidden value
+        var element = document.getElementById("idEditAccount");
+
+        //If it isn't "undefined" and it isn't "null", then it exists.
+        if (typeof(element) != 'undefined' && element != null) {
+            element.parentNode.removeChild(element);
+        }
+        let hiddenId = document.createElement("input");
+        hiddenId.id = "idEditAccount";
+        hiddenId.type = "hidden";
+        hiddenId.name = "idEditAccount";
+        hiddenId.value = id;
+
+        form.appendChild(hiddenId);
     }
     //create Tabulator on DOM element with id "example-table"
     var table = new Tabulator("#example-table", {
@@ -351,12 +426,6 @@
                 headerHozAlign: "center",
                 formatter: deleteIcon,
                 hozAlign: "center",
-                cellClick: function(e, cell) {
-                    //e - the click event object
-                    //cell - cell component
-                    id = cell.getData().id;
-                    console.log("id :" + id);
-                },
             },
         ],
     });
