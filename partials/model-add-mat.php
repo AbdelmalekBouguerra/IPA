@@ -2,7 +2,10 @@
 include "./config/config.php";
 // add a metriel ==================================
 if(isset($_POST['idUser'])) {
-    echo '<script>console.log("form submited");</script>';
+        echo '<script>
+            console.log("form submited");
+        </script>';
+
     $idUser = trim($_POST['idUser']);
     $idFournisseur = trim($_POST['idFournisseur']);
     $categorie = trim($_POST['categorie']);
@@ -16,25 +19,50 @@ if(isset($_POST['idUser'])) {
     $dateDebutGarantie = trim($_POST['dateDebutGarantie']);
     $dateFinGarantie = trim($_POST['dateFinGarantie']);
     try {
-        $query = 'INSERT INTO
-        materiel(`idUser`,`idFournisseur`,`libelle`,`Marque`,`typeMateriel`,`categorie`,`nSerie`,`prixAchat`,`dateAchat`,`dateMiseEnMarche`,`dateDebutGarantie`,`dateFinGarantie`)
-        VALUES(:idUser,:idFournisseur,:libelle,:marque,:typeMateriel,:categorie,:nSerie,:prixAchat,:dateAchat,:dateMiseEnMarche,:dateDebutGarantie,:dateFinGarantie)';
-        $stmt = $connection->prepare($query);
-        $stmt->bindParam('idUser', $idUser, PDO::PARAM_INT);
-        $stmt->bindParam('idFournisseur', $idFournisseur, PDO::PARAM_INT);
-        $stmt->bindParam('categorie', $categorie, PDO::PARAM_STR);
-        $stmt->bindParam('nSerie', $nSerie, PDO::PARAM_STR);
-        $stmt->bindParam('libelle', $libelle, PDO::PARAM_STR);
-        $stmt->bindParam('typeMateriel', $typeMateriel, PDO::PARAM_STR);
-        $stmt->bindParam('marque', $marque, PDO::PARAM_STR);
-        $stmt->bindParam('prixAchat', $prixAchat, PDO::PARAM_STR);
-        $stmt->bindParam('dateAchat', $dateAchat, PDO::PARAM_STR);
-        $stmt->bindParam('dateMiseEnMarche', $dateMiseEnMarche, PDO::PARAM_STR);
-        $stmt->bindParam('dateDebutGarantie', $dateDebutGarantie, PDO::PARAM_STR);
-        $stmt->bindParam('dateFinGarantie', $dateFinGarantie, PDO::PARAM_STR);
-        $stmt->execute();
+        if(isset($_POST['idEditMateriel'])){
+            echo '<script type="text/javascript">
+                ' .
+                'console.log("am in Edit");
+            </script>';
+            $idEditMateriel = trim($_POST['idEditMateriel']);
+                        echo '<script type="text/javascript">
+                            ' .
+                            'console.log('.$idEditMateriel.');
+                        </script>';
+            $query = 'UPDATE materiel SET
+            `idUser`=:idUser,`idFournisseur`=:idFournisseur,`libelle`=:libelle,`Marque`=:marque,`typeMateriel`=:typeMateriel,`categorie`=:categorie,`nSerie`=:nSerie,`prixAchat`=:prixAchat,
+            `dateAchat`=:dateAchat,`dateMiseEnMarche`=:dateMiseEnMarche,`dateDebutGarantie`=:dateDebutGarantie,`dateFinGarantie`=:dateFinGarantie
+            WHERE `id`=:idEditMateriel ;';
+            $stmt2 = $connection->prepare($query);
+            $stmt2->bindParam('idEditMateriel', $idEditMateriel, PDO::PARAM_INT);
+        }else{
+            echo '<script type="text/javascript">
+                ' .
+                'console.log("am in Insert");
+            </script>';
+            $query = 'INSERT INTO
+            materiel(`idUser`,`idFournisseur`,`libelle`,`Marque`,`typeMateriel`,`categorie`,`nSerie`,`prixAchat`,`dateAchat`,`dateMiseEnMarche`,`dateDebutGarantie`,`dateFinGarantie`)
+            VALUES(:idUser,:idFournisseur,:libelle,:marque,:typeMateriel,:categorie,:nSerie,:prixAchat,:dateAchat,:dateMiseEnMarche,:dateDebutGarantie,:dateFinGarantie)';
+            $stmt2 = $connection->prepare($query);
+        }
+        $stmt2->bindParam('idUser', $idUser, PDO::PARAM_INT);
+        $stmt2->bindParam('idFournisseur', $idFournisseur, PDO::PARAM_INT);
+        $stmt2->bindParam('categorie', $categorie, PDO::PARAM_STR);
+        $stmt2->bindParam('nSerie', $nSerie, PDO::PARAM_STR);
+        $stmt2->bindParam('libelle', $libelle, PDO::PARAM_STR);
+        $stmt2->bindParam('typeMateriel', $typeMateriel, PDO::PARAM_STR);
+        $stmt2->bindParam('marque', $marque, PDO::PARAM_STR);
+        $stmt2->bindParam('prixAchat', $prixAchat, PDO::PARAM_STR);
+        $stmt2->bindParam('dateAchat', $dateAchat, PDO::PARAM_STR);
+        $stmt2->bindParam('dateMiseEnMarche', $dateMiseEnMarche, PDO::PARAM_STR);
+        $stmt2->bindParam('dateDebutGarantie', $dateDebutGarantie, PDO::PARAM_STR);
+        $stmt2->bindParam('dateFinGarantie', $dateFinGarantie, PDO::PARAM_STR);
+        $stmt2->execute();
     } catch (PDOException $e) {
         echo "Error : ".$e->getMessage();
+                    echo '<script type="text/javascript">
+                        ' .$e->getMessage().
+                        'console.log("am in Insert")';
     }
 }
 // ===================================================
@@ -48,66 +76,68 @@ if(isset($_POST['idUser'])) {
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Ajoute materiel</h4>
-                    <form class="forms-sample" method="POST">
+                    <form class="forms-sample" method="POST" id="addingMaterielForm">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="1">id utilsateur</label>
-                                    <input type="text" class="form-control" id="1" name="idUser"
+                                    <label for="idUser">id utilsateur</label>
+                                    <input type="text" class="form-control" id="idUser" name="idUser"
                                         placeholder="s'il n'existe pas, laisser-la vide">
                                 </div>
                                 <div class="form-group">
-                                    <label for="2">id fournisseur</label>
-                                    <input type="text" class="form-control" id="2" name="idFournisseur"
+                                    <label for="idFournisseur">id fournisseur</label>
+                                    <input type="text" class="form-control" id="idFournisseur" name="idFournisseur"
                                         placeholder="s'il n'existe pas, laisser-la vide">
                                 </div>
                                 <div class="form-group">
-                                    <label for="4">categorie</label>
-                                    <input type="text" class="form-control" id="4" name="categorie">
+                                    <label for="categorie">categorie</label>
+                                    <input type="text" class="form-control" id="categorie" name="categorie">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="3">libelle</label>
-                                    <input type="text" class="form-control" id="3" name="libelle">
+                                    <label for="libelle">libelle</label>
+                                    <input type="text" class="form-control" id="libelle" name="libelle">
                                 </div>
                                 <div class="form-group">
                                     <label for="4">marque</label>
-                                    <input type="text" class="form-control" id="4" name="marque">
+                                    <input type="text" class="form-control" id="marque" name="marque">
                                 </div>
                                 <div class="form-group">
-                                    <label for="4">type materiel</label>
-                                    <input type="text" class="form-control" id="4" name="typeMateriel">
+                                    <label for="typeMateriel">type materiel</label>
+                                    <input type="text" class="form-control" id="typeMateriel" name="typeMateriel">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="4">Numéro de série</label>
-                                    <input type="text" class="form-control" id="4" name="nSerie">
+                                    <label for="nSerie">Numéro de série</label>
+                                    <input type="text" class="form-control" id="nSerie" name="nSerie">
                                 </div>
                                 <div class="form-group">
-                                    <label for="4">prix d'achat</label>
-                                    <input type="text" class="form-control" id="4" name="prixAchat">
+                                    <label for="prixAchat">prix d'achat</label>
+                                    <input type="text" class="form-control" id="prixAchat" name="prixAchat">
                                 </div>
                                 <div class="form-group">
-                                    <label for="4">date achat</label>
-                                    <input type="date" class="form-control" id="4" name="dateAchat">
+                                    <label for="dateAchat">date achat</label>
+                                    <input type="date" class="form-control" id="dateAchat" name="dateAchat">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="4">date mise en marche</label>
-                                    <input type="date" class="form-control" id="4" name="dateMiseEnMarche">
+                                    <label for="dateMiseEnMarche">date mise en marche</label>
+                                    <input type="date" class="form-control" id="dateMiseEnMarche"
+                                        name="dateMiseEnMarche">
                                 </div>
                                 <div class="form-group">
-                                    <label for="4">date debut garantie</label>
-                                    <input type="date" class="form-control" id="4" name="dateDebutGarantie">
+                                    <label for="dateDebutGarantie">date debut garantie</label>
+                                    <input type="date" class="form-control" id="dateDebutGarantie"
+                                        name="dateDebutGarantie">
                                 </div>
                                 <div class="form-group">
-                                    <label for="4">date fin garantie</label>
-                                    <input type="date" class="form-control" id="4" name="dateFinGarantie">
+                                    <label for="dateFinGarantie">date fin garantie</label>
+                                    <input type="date" class="form-control" id="dateFinGarantie" name="dateFinGarantie">
                                 </div>
                             </div>
                         </div>

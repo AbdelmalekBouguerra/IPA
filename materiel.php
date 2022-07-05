@@ -1,3 +1,19 @@
+<?php
+include "./config/config.php";
+// delete meteriel ==================================
+if(isset($_POST['idDeleteMateriel'])) {
+    $idDeleteMateriel = trim($_POST['idDeleteMateriel']);
+    try {
+        $query = "DELETE FROM `materiel` WHERE id=:id;";
+        $stmt = $connection->prepare($query);
+        $stmt->bindParam('id', $idDeleteMateriel, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Error : ".$e->getMessage();
+    }
+}
+// ===================================================
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -243,11 +259,10 @@
                 </ul>
             </nav>
             <!-- partial -->
-            <?php include './partials/model-add-mat.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
-                        <button type='button' data-toggle='modal' data-target='#add-materiel'
+                        <button id="addMeteriel" type='button' data-toggle='modal' data-target='#add-materiel'
                             class='btn mb-3 ml-3 btn-inverse-success btn-fw'> Ajoute materiel</button>
                         <div id="example-table" style="width: 1610px;"></div> <!-- here the table -->
                     </div>
@@ -271,7 +286,7 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    <?php include 'partials/model-ticket-accounts.php'; ?>
+    <?php include 'partials/model-add-mat.php'; ?>
     <!-- base:js -->
     <script src="admin/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -290,74 +305,129 @@
     <!-- End custom js for this page-->
     <script type="text/javascript" src="./vendor/tabulator/dist/js/tabulator.min.js"></script>
     <script>
-        //custom formatter definition
-        var deleteIcon = function (cell, formatterParams, onRendered) { //plain text value
-            return "<button type='button' class='btn btn-inverse-danger btn-fw' onClick=\"deleteUser();\"> Supprimer </button>" +
-                "<button type='button' data-toggle='modal' data-target='#account' style=\"margin-left: 10px;\" " +
-                "class = 'btn btn-inverse-info btn-fw'> Modifier </button>";
-        };
-        // delete  user
-        var id = "";
+    //custom formatter definition
+    var deleteIcon = function(cell, formatterParams, onRendered) { //plain text value
+        var id2 = cell.getData().id;
+        return '<form method="POST" id="deleteMateriel' + id2 + '">' +
+            '<input type="hidden" name="idDeleteMateriel" value="' + id2 + '">' +
+            '<button type=\'button\' class=\'btn btn-inverse-danger btn-fw mr-3\' onClick="deleteMateriel(this);"> Supprimer' +
+            '</button>' +
+            '<button type=\'button\' data-toggle=\'modal\' data-target=\'#add-materiel\' onClick=\'editMateriel(this,"' +
+            id2 + '")\' ;' +
+            'style="margin-left: 10px;" class=\' btn btn-inverse-info btn-fw\'> Modifier </button>' +
+            '</form>';
 
-        function deleteUser() {
-            if (confirm("vous etes sur ?")) {
-                console.log("id deleted : " + id)
-            } else {
-                console.log("Declined")
-            }
+    };
+    // delete  user
+    var id = "";
+
+    document.getElementById("addMeteriel").addEventListener("click", e => {
+        document.getElementById("addingMeterielForm").reset();
+        var element = document.getElementById("idEditMeteriel");
+
+        //If it isn't "undefined" and it isn't "null", then it exists.
+        if (typeof(element) != 'undefined' && element != null) {
+            element.parentNode.removeChild(element);
         }
-        //create Tabulator on DOM element with id "example-table"
-        var table = new Tabulator("#example-table", {
-            ajaxURL: "src/materiel.php", //ajax URL
-            height: 633,
-            layout: "fitColumns", //fit columns to width of table (optional)
-            columns: [ //Define Table Columns
-                {
-                    title: "idUser",
-                    field: "idUser",
-                    width: 150
+    })
+
+    function deleteMateriel(e) {
+        if (confirm("Vous etes sur ?")) {
+            // console.log("parent id :" + e.parentNode.id);
+
+            document.getElementById(e.parentNode.id).submit();
+        } else {
+            return false;
+        }
+    }
+
+    function editMateriel(e, id) {
+        let data = table.getRow(id).getData();
+        document.getElementById('idUser').value = data.idUser;
+        document.getElementById('idFournisseur').value = data.idFournisseur;
+        document.getElementById('categorie').value = data.categorie;
+        document.getElementById('libelle').value = data.libelle;
+        document.getElementById('marque').value = data.Marque;
+        document.getElementById('typeMateriel').value = data.typeMateriel;
+        document.getElementById('nSerie').value = data.nSerie;
+        document.getElementById('prixAchat').value = data.prixAchat;
+        document.getElementById('dateAchat').value = data.dateAchat;
+        document.getElementById('dateMiseEnMarche').value = data.dateMiseEnMarche;
+        document.getElementById('dateDebutGarantie').value = data.dateDebutGarantie;
+        document.getElementById('dateFinGarantie').value = data.dateFinGarantie;
+
+        let form = document.getElementById("addingMaterielForm");
+
+        // creating input:hidden
+        // check if exist old hidden value
+        var element = document.getElementById("idEditMateriel");
+
+        //If it isn't "undefined" and it isn't "null", then it exists.
+        if (typeof(element) != 'undefined' && element != null) {
+            element.parentNode.removeChild(element);
+        }
+        let hiddenId = document.createElement("input");
+        hiddenId.id = "idEditMateriel";
+        hiddenId.type = "hidden";
+        hiddenId.name = "idEditMateriel";
+        hiddenId.value = id;
+
+        form.appendChild(hiddenId);
+    }
+
+
+    //create Tabulator on DOM element with id "example-table"
+    var table = new Tabulator("#example-table", {
+        ajaxURL: "src/materiel.php", //ajax URL
+        height: 633,
+        layout: "fitColumns", //fit columns to width of table (optional)
+        columns: [ //Define Table Columns
+            {
+                title: "idUser",
+                field: "idUser",
+                width: 150
+            },
+            {
+                title: "idFournisseur",
+                field: "idFournisseur",
+                width: 150
+            },
+            {
+                title: "libelle",
+                field: "libelle",
+                width: 150
+            },
+            {
+                title: "Numéro de série",
+                field: "nSerie",
+                width: 150
+            },
+            {
+                title: "date debut garantie",
+                field: "dateDebutGarantie",
+                width: 200,
+                sorter: "date"
+            },
+            {
+                title: "date fin garantie",
+                field: "dateFinGarantie",
+                width: 200,
+                sorter: "date"
+            },
+            {
+                title: "Action",
+                headerHozAlign: "center",
+                formatter: deleteIcon,
+                hozAlign: "center",
+                cellClick: function(e, cell) {
+                    //e - the click event object
+                    //cell - cell component
+                    id = cell.getData().id;
+                    console.log("id :" + id);
                 },
-                {
-                    title: "idFournisseur",
-                    field: "idFournisseur",
-                    width: 150
-                },
-                {
-                    title: "libelle",
-                    field: "libelle",
-                    width: 150
-                },
-                {
-                    title: "Numéro de série",
-                    field: "nSerie",
-                    width: 150
-                },
-                {
-                    title: "date debut garantie",
-                    field: "dateDebutGarantie",
-                    width: 200,
-                    sorter: "date"
-                },
-                {
-                    title: "date fin garantie",
-                    field: "dateFinGarantie",
-                    width: 200,
-                    sorter: "date"
-                },
-                {
-                    title: "Action",
-                    headerHozAlign: "center",
-                    formatter: deleteIcon,
-                    hozAlign: "center",
-                    cellClick: function (e, cell) {
-                        //e - the click event object
-                        //cell - cell component
-                        id = cell.getData().id;
-                        console.log("id :" + id);
-                    },
-                },
-            ],
-        });
+            },
+        ],
+    });
     </script>
 </body>
 
