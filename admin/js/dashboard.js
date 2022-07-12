@@ -596,7 +596,7 @@
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         datasets: [
           {
-            label: 'Register User',
+            label: 'Ticket accepte',
             data: [80, 180, 80, 200, 140, 180, 70],
             borderColor: [
               '#a43cda'
@@ -606,7 +606,7 @@
             backgroundColor: "rgba(164, 60, 218, .1)"
           },
           {
-            label: 'Premium User',
+            label: 'Ticket refesse',
             data: [200, 340, 200, 340, 220, 310, 190],
             borderColor: [
               '#00c8bf'
@@ -662,11 +662,11 @@
           var text = [];
           text.push('<div class="d-flex align-items-center mr-3">');
             text.push('<div class="mr-2" style="width: 12px; border-radius: 50%; height: 12px; background-color: ' + chart.data.datasets[0].borderColor[0] +' "></div>');
-            text.push('<p class="mb-0">Register User</p>');
+            text.push('<p class="mb-0">Ticket accepte</p>');
           text.push('</div>');
           text.push('<div class="d-flex align-items-center">');
             text.push('<div class="mr-2" style="width: 12px; border-radius: 50%; height: 12px; background-color: ' + chart.data.datasets[1].borderColor[0] +' "></div>');
-            text.push('<p class="mb-0">Premium User</p>');
+            text.push('<p class="mb-0">Ticket rufesse</p>');
           text.push('</div>');
           return text.join('');
         },
@@ -706,7 +706,7 @@
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         datasets: [
           {
-            label: 'Register User',
+            label: 'Ticket accepter',
             data: [80, 180, 80, 200, 140, 180, 70],
             borderColor: [
               '#a43cda'
@@ -716,7 +716,7 @@
             backgroundColor: "rgba(164, 60, 218, .1)"
           },
           {
-            label: 'Premium User',
+            label: 'Ticket rufesee',
             data: [200, 340, 200, 340, 220, 310, 190],
             borderColor: [
               '#00c8bf'
@@ -772,11 +772,11 @@
           var text = [];
           text.push('<div class="d-flex align-items-center mr-3">');
             text.push('<div class="mr-2" style="width: 12px; border-radius: 50%; height: 12px; background-color: ' + chart.data.datasets[0].borderColor[0] +' "></div>');
-            text.push('<p class="mb-0">Register User</p>');
+            text.push('<p class="mb-0">Ticket accepte</p>');
           text.push('</div>');
           text.push('<div class="d-flex align-items-center">');
             text.push('<div class="mr-2" style="width: 12px; border-radius: 50%; height: 12px; background-color: ' + chart.data.datasets[1].borderColor[0] +' "></div>');
-            text.push('<p class="mb-0">Premium User</p>');
+            text.push('<p class="mb-0">Ticket refusee</p>');
           text.push('</div>');
           return text.join('');
         },

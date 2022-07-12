@@ -1,31 +1,48 @@
 <?php
+// include "./config/config.php";
+// // accept a ticket ==================================
+// if(isset($_POST['idTicket'])) {
+//     $idTicket = trim($_POST['idTicket']);
+//     $nom = trim($_POST['nom']);
+//     $prenom = trim($_POST['prenom']);
+//     $matricule = trim($_POST['matricule']);
+//     $email = trim($_POST['email']);
+//     $userRole = trim($_POST['userRole']);
+//     $userName = trim($_POST['userName']);
+//     $userPassword = trim($_POST['userPassword']);
+//     $confirmPassword = trim($_POST['confirmPassword']);
+//     $IdService = trim($_POST['IdService']);
+//     $Fonction = trim($_POST['Fonction']);
+// try {
+// $query = "UPDATE users SET
+// `idService`=:idService,prenom=:prenom,matricule=:matricule,email=:email,fonction=:Fonction,`userName`=:userName,`userPassword`=:userPassword,`userRole`=:userRole
+// WHERE `id`=:id;";
+// $stmt = $connection->prepare($query);
+// $stmt->bindParam('id', $idTicket, PDO::PARAM_INT);
+// $stmt->execute();
+// } catch (PDOException $e) {
+// echo "Error : ".$e->getMessage();
+// }
+// }
+// ===================================================
 include "./config/config.php";
 // accept a ticket ==================================
 if(isset($_POST['idTicket'])) {
-    $idTicket = trim($_POST['idTicket']);
-    $nom = trim($_POST['nom']);
-    $prenom = trim($_POST['prenom']);
-    $matricule = trim($_POST['matricule']);
-    $email = trim($_POST['email']);
-    $userRole = trim($_POST['userRole']);
-    $userName = trim($_POST['userName']);
-    $userPassword = trim($_POST['userPassword']);
-    $confirmPassword = trim($_POST['confirmPassword']);
-    $IdService = trim($_POST['IdService']);
-    $Fonction = trim($_POST['Fonction']);
+$idTicket = trim($_POST['idTicket']);
 try {
-$query = "UPDATE users SET
-`idService`=:idService,prenom=:prenom,matricule=:matricule,email=:email,fonction=:Fonction,`userName`=:userName,`userPassword`=:userPassword,`userRole`=:userRole
-WHERE `id`=:id;";
+// if directeur put valide else put onWork
+$val = 'fermer';
+$query = "UPDATE ticket SET status =:val WHERE id=:id;";
 $stmt = $connection->prepare($query);
 $stmt->bindParam('id', $idTicket, PDO::PARAM_INT);
+$stmt->bindParam('val', $val, PDO::PARAM_STR);
 $stmt->execute();
 } catch (PDOException $e) {
 echo "Error : ".$e->getMessage();
 }
 }
-// ===================================================
 ?>
+// ===================================================
 <!DOCTYPE html>
 <html lang="en">
 
