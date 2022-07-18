@@ -287,3 +287,7 @@ VALUES (
         'superAdmin',
         1
     );
+
+-- count
+
+SELECT * FROM ticket;

@@ -2,7 +2,7 @@
    session_start();
    include "config/config.php";
    $msg = ""; 
-   if(isset($_POST['Login'])) {
+   if(isset($_POST['username'])) { // test si on a envoyer la requte post 
    $username = trim($_POST['username']);
    $password = trim($_POST['password']);
    if($username != "" && $password != "") {
