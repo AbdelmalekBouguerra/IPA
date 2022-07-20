@@ -400,11 +400,14 @@ echo "Error : ".$e->getMessage();
     var deleteIcon = function(cell, formatterParams, onRendered) {
         //plain text value
         id = cell.getData().id;
-        return ' <form action="" method="POST" id="acceptTicket' + id + '">' +
+        return ' < action="" method="POST" id="acceptTicket' + id + '">' +
             '<input type="hidden" name="idTicket" value="' + id + '">' +
             '<button type=\'button\' class=\'btn btn-inverse-info btn-fw\' onClick=\'confirmAccepte(this);\'> Accepter </button>' +
             '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
             'class = \'btn btn-inverse-danger btn-fw\'> Refuser </button>' +
+            
+             '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
+            'class = \'btn btn-inverse-info btn-fw\'> Bon de commande </button>' +
             '</form>';
     };
     // delete  user
