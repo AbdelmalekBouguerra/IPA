@@ -47,6 +47,28 @@ echo "Error : ".$e->getMessage();
 </head>
 
 <body>
+<?php include 'src/ticket.php';
+
+
+        foreach($tickets as $val){ ?>
+
+         
+<form action="bonCommande.php" id="bc<?php echo $val["id"]; ?>"
+             method="post">
+            <input type="hidden" name="id" value="<?php echo $val["id"]; ?>">
+             <input type="hidden" name="descriptionTicket"
+                     value="<?php echo $val["descriptionTicket"]; ?>">
+             <input type="hidden" name="typeTicket"
+                    value="<?php echo $val["typeTicket"]; ?>">
+            <input type="hidden" name="materiel"
+                     value="<?php echo $val["materiel"]; ?>">
+            <input type="hidden" name="time" value="<?php echo $val["time"]; ?>">
+           <!-- <a href="javascript:;"
+                  onclick="document.getElementById('bc<?php echo $val['id']; ?>').submit()">
+             <p><?php echo "Bon commande #" . $val["id"]; ?></p>
+                 </a> -->
+             </form>
+             <?php } ?>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -282,6 +304,7 @@ echo "Error : ".$e->getMessage();
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
+
                     <?php if ($_SESSION["userRole"] == 'superAdmin') {?>
                     <li class="nav-item">
                         <a class="nav-link" href="acounts.php">
@@ -407,8 +430,8 @@ echo "Error : ".$e->getMessage();
             'class = \'btn btn-inverse-danger btn-fw\'> Refuser </button>' +
             
              '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
-            'class = \'btn btn-inverse-info btn-fw\'> Bon de commande </button>' +
-            '</form>';
+            'class = \'btn btn-inverse-info btn-fw\' onclick="document.getElementById('bc<?php echo $val['id']; ?>').submit()"> Bon de commande </button>' +
+            '</form>' ;
     };
     // delete  user
     var id = "";
