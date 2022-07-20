@@ -285,22 +285,22 @@ if(isset($_POST['idDeletedTicket'])) {
     <script src="./vendor/chosen_v1.8.7/chosen.proto.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-    $(function() {
-        $(".chzn-select").chosen({
-            width: "100%"
+        $(function () {
+            $(".chzn-select").chosen({
+                width: "100%"
+            });
         });
-    });
     </script>
 
     <!-- delet and edit ticket scirpt -->
     <script>
-    function deleteTicket() {
+        function deleteTicket() {
 
-        if (!window.confirm("Vous êtes sûr de supprimer cette ticket Ce processus est irréversible ?")) {
-            event.preventDefault();
-            console.log("submit prevented");
+            if (!window.confirm("Vous êtes sûr de supprimer cette ticket Ce processus est irréversible ?")) {
+                event.preventDefault();
+                console.log("submit prevented");
+            }
         }
-    }
     </script>
 </body>
 

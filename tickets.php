@@ -47,28 +47,24 @@ echo "Error : ".$e->getMessage();
 </head>
 
 <body>
-<?php include 'src/ticket.php';
 
+    <?php include 'src/ticket.php';
+    $idTicket [] = array();
+    $i = 0;
+    foreach($tickets as $val){ ?>
+    <form action="bonCommande.php" id="bc<?php echo $val["id"]; ?>" method="post">
+        <input type="hidden" name="id" value="<?php echo $val["id"]; ?>">
+        <input type="hidden" name="descriptionTicket" value="<?php echo $val["descriptionTicket"]; ?>">
+        <input type="hidden" name="typeTicket" value="<?php echo $val["typeTicket"]; ?>">
+        <input type="hidden" name="materiel" value="<?php echo $val["materiel"]; ?>">
+        <input type="hidden" name="time" value="<?php echo $val["time"]; ?>">
+    </form>
+    <?php 
+        $idTicket[$i] = $val["id"];
+        $i = $i + 1 ;
+        }
+        $i = 0; ?>
 
-        foreach($tickets as $val){ ?>
-
-         
-<form action="bonCommande.php" id="bc<?php echo $val["id"]; ?>"
-             method="post">
-            <input type="hidden" name="id" value="<?php echo $val["id"]; ?>">
-             <input type="hidden" name="descriptionTicket"
-                     value="<?php echo $val["descriptionTicket"]; ?>">
-             <input type="hidden" name="typeTicket"
-                    value="<?php echo $val["typeTicket"]; ?>">
-            <input type="hidden" name="materiel"
-                     value="<?php echo $val["materiel"]; ?>">
-            <input type="hidden" name="time" value="<?php echo $val["time"]; ?>">
-           <!-- <a href="javascript:;"
-                  onclick="document.getElementById('bc<?php echo $val['id']; ?>').submit()">
-             <p><?php echo "Bon commande #" . $val["id"]; ?></p>
-                 </a> -->
-             </form>
-             <?php } ?>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -428,10 +424,10 @@ echo "Error : ".$e->getMessage();
             '<button type=\'button\' class=\'btn btn-inverse-info btn-fw\' onClick=\'confirmAccepte(this);\'> Accepter </button>' +
             '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
             'class = \'btn btn-inverse-danger btn-fw\'> Refuser </button>' +
-            
-             '<button type=\'button\' data-toggle=\'modal\' data-target=\'#account\' style="margin-left: 10px;" ' +
-            'class = \'btn btn-inverse-info btn-fw\' onclick="document.getElementById('bc<?php echo $val['id']; ?>').submit()"> Bon de commande </button>' +
-            '</form>' ;
+            '<button type=\'button\' data-toggle=\'modal\' style="margin-left: 10px;" ' +
+            'class = \'btn btn-inverse-info btn-fw\' onclick="document.getElementById(\'bc' +
+            '<?php echo $idTicket[$i]; $i = $i + 1 ; ?>\').submit()"> Bon de commande </button>' +
+            '</form>';
     };
     // delete  user
     var id = "";
@@ -505,6 +501,7 @@ echo "Error : ".$e->getMessage();
         ],
     });
     </script>
+
 </body>
 
 </html>
